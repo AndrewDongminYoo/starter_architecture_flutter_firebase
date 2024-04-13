@@ -9,12 +9,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
-import '../../../../common_widgets/date_time_picker.dart';
-import '../../../../common_widgets/responsive_center.dart';
 import '../../../../constants/app_sizes.dart';
 import '../../../../constants/breakpoints.dart';
 import '../../../../utils/async_value_ui.dart';
 import '../../../../utils/format.dart';
+import '../../../../widgets/date_time_picker.dart';
+import '../../../../widgets/responsive_center.dart';
 import '../../../jobs/domain/job.dart';
 import '../../domain/entry.dart';
 import 'entry_screen_controller.dart';

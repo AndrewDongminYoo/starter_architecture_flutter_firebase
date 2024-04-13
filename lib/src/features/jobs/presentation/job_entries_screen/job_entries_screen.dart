@@ -6,8 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
-import '../../../../common_widgets/async_value_widget.dart';
 import '../../../../routing/app_router.dart';
+import '../../../../widgets/async_value_widget.dart';
 import '../../data/jobs_repository.dart';
 import '../../domain/job.dart';
 import 'job_entries_list.dart';

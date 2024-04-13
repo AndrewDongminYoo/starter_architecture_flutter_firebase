@@ -8,10 +8,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
-import '../../../common_widgets/primary_button.dart';
-import '../../../common_widgets/responsive_center.dart';
 import '../../../constants/app_sizes.dart';
 import '../../../routing/app_router.dart';
+import '../../../widgets/primary_button.dart';
+import '../../../widgets/responsive_center.dart';
 import 'onboarding_controller.dart';
 
 class OnboardingScreen extends ConsumerWidget {

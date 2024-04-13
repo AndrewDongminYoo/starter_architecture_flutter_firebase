@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // 🌎 Project imports:
-import '../../../common_widgets/list_items_builder.dart';
 import '../../../constants/app_sizes.dart';
 import '../../../constants/strings.dart';
+import '../../../widgets/list_items_builder.dart';
 import '../application/entries_service.dart';
 import '../domain/entries_list_tile_model.dart';
 
