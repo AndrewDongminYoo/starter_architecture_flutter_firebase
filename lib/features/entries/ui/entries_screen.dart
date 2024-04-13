@@ -8,8 +8,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../constants/app_sizes.dart';
 import '../../../constants/strings.dart';
 import '../../../widgets/list_items_builder.dart';
-import '../application/entries_service.dart';
 import '../domain/entries_list_tile_model.dart';
+import '../services/entries_service.dart';
 
 class EntriesScreen extends ConsumerWidget {
   const EntriesScreen({super.key});
