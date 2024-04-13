@@ -2,7 +2,7 @@
 import 'package:flutter_test/flutter_test.dart';
 
 // 🌎 Project imports:
-import 'package:starter_architecture_flutter_firebase/src/features/jobs/domain/job.dart';
+import 'package:starter_architecture_flutter_firebase/features/jobs/domain/job.dart';
 
 void main() {
   group('fromMap', () {

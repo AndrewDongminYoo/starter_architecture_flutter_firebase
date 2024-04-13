@@ -12,7 +12,7 @@ import 'package:flutter_web_plugins/url_strategy.dart';
 
 // 🌎 Project imports:
 import 'firebase_options.dart';
-import 'src/app.dart';
+import 'app.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -3,8 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mocktail/mocktail.dart';
 
 // 🌎 Project imports:
-import 'package:starter_architecture_flutter_firebase/src/features/auth/data/firebase_auth_repository.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/onboarding/data/onboarding_repository.dart';
+import 'package:starter_architecture_flutter_firebase/features/auth/data/firebase_auth_repository.dart';
+import 'package:starter_architecture_flutter_firebase/features/onboarding/data/onboarding_repository.dart';
 
 class MockAuthRepository extends Mock implements AuthRepository {}
 
