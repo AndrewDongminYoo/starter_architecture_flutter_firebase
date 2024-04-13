@@ -1,33 +1,118 @@
-# This file configures the analyzer, which statically analyzes Dart code to
-# check for errors, warnings, and lints.
+# 이 파일은 오류, 경고 및 줄 바꿈이 있는지 확인하기 위해 Dart 코드를 정적으로 분석하는 분석기를 구성합니다.
 #
-# The issues identified by the analyzer are surfaced in the UI of Dart-enabled
-# IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
-# invoked from the command line by running `flutter analyze`.
+# 분석기가 식별한 문제는 Dart 지원 IDE의 UI에 표시됩니다(https://dart.dev/tools#ides-and-editors).
+# 분석기는 명령줄에서 `flutter analyze`를 실행하여 호출할 수도 있습니다.
+# 다음 줄은 올바른 코딩 관행을 장려하기 위해 설계된 Flutter 앱, 패키지 및 플러그인에 대한 권장 린트 집합을 활성화합니다.
+include: flutter_lints.yaml
 
-# The following line activates a set of recommended lints for Flutter apps,
-# packages, and plugins designed to encourage good coding practices.
-include: package:flutter_lints/flutter.yaml
+linter:
+  # 아래 섹션에서 전체 프로젝트에 대한 린트 규칙을 비활성화하는 대신 린트를 생성하는 코드 줄 또는 파일에서
+  # `// ignore: name_of_lint` 또는 `// ignore_for_file: name_of_lint`
+  # 구문을 사용하여 한 줄의 코드 또는 특정 다트 파일에 대해 린트 규칙을 비활성화할 수도 있습니다.
+
+  rules:
+    # 메소드 매개변수를 가능한 final로 선언하도록 권장합니다.
+    prefer_final_parameters: false
+    # 함수나 메소드의 매개변수에 값을 재할당하지 않도록 권장합니다.
+    parameter_assignments: true
+    # 동일한 객체에 대한 연속적인 메소드 호출을 연쇄 호출(cascades)로 결합하도록 권장합니다.
+    cascade_invocations: false
+    # 문자열을 표현할 때 쌍따옴표를 사용하도록 권장합니다.
+    prefer_double_quotes: false
+    # 문자열을 표현할 때 홑따옴표를 사용하도록 권장합니다.
+    prefer_single_quotes: true
+    # 변수 및 반환 타입을 항상 명시적으로 선언하도록 권장합니다.
+    always_specify_types: false
+    # 지역 변수의 타입 선언을 생략하고 타입 추론을 사용하도록 권장합니다.
+    omit_local_variable_types: true
+    # 수정될 수 없는 변수에 대해 final 키워드 사용을 제한합니다.
+    unnecessary_final: false
+    # 지역 변수를 가능한 final로 선언하도록 권장합니다.
+    prefer_final_locals: true
+    # 함수나 메소드 본문이 단일 표현식으로 구성될 수 있는 경우, 화살표(=>) 표현을 사용하도록 권장합니다.
+    prefer_expression_function_bodies: false
+    # 이름이 지정된 매개변수 중에서 `required` 키워드가 붙은 매개변수를 항상 먼저 선언하도록 권장합니다.
+    always_put_required_named_parameters_first: false
+    # Flutter 스타일의 TODO 주석을 사용하도록 권장합니다.
+    flutter_style_todos: false
+    # 예외 처리 시 `catch` 구문을 사용할 때 가능한 `on` 절을 명시적으로 사용하도록 권장합니다.
+    avoid_catches_without_on_clauses: false
+    # 코드 한 줄의 길이가 80자를 넘지 않도록 권장합니다.
+    lines_longer_than_80_chars: false
+    # 가능한 `dynamic` 타입 주석 사용을 피하도록 권장합니다.
+    avoid_annotating_with_dynamic: false
+    # 같은 패키지 내의 파일을 임포트할 때 상대 경로를 사용하도록 권장합니다.
+    prefer_relative_imports: true
+    # 패키지 내 파일을 임포트할 때 항상 패키지: 접두사를 사용하도록 권장합니다.
+    always_use_package_imports: false
+    # switch 문에서 default 케이스를 사용하지 않도록 권장합니다.
+    no_default_cases: false
+    # assert 문을 사용할 때 메시지를 추가하도록 권장합니다.
+    prefer_asserts_with_message: false
+    # 클로저 매개변수에 타입 주석을 사용하지 않도록 권장합니다.
+    avoid_types_on_closure_parameters: false
+    # Flutter 위젯에서 모든 속성을 설명하는 `diagnosticDescribeAllProperties` 메서드를 구현하도록 권장합니다.
+    diagnostic_describe_all_properties: false
+    # 위치 기반의 불리언 매개변수 사용을 피하도록 권장합니다.
+    avoid_positional_boolean_parameters: false
+    # 불변 객체를 생성할 때 가능한 const 생성자를 사용하도록 권장합니다.
+    prefer_const_constructors_in_immutables: true
+    # 빈 생성자 본문에는 {} 대신 ; 를 사용합니다.
+    empty_constructor_bodies: true
+    # 공개 API 멤버에 대한 문서화 주석을 요구합니다.
+    public_member_api_docs: false
+    # `print` 문의 사용을 피하도록 권장합니다.
+    avoid_print: false
+    # 가능한 모든 리스트와 맵 리터럴, 그리고 함수 호출에서 항목 뒤에 쉼표를 추가하도록 권장합니다.
+    require_trailing_commas: true
+    # 동적 호출을 피하도록 권장합니다.
+    avoid_dynamic_calls: false
+    # 주석 내에서 참조([some_reference])를 사용할 때 경고합니다.
+    comment_references: false
+    # 임포트 및 익스포트 문의 순서를 규정합니다.
+    directives_ordering: false
+    # 가능한 mixin을 사용하도록 권장합니다.
+    prefer_mixin: false
+    # 정적 멤버만 포함하는 클래스 사용을 피하도록 권장합니다.
+    avoid_classes_with_only_static_members: false
+    # 상수 식별자의 이름을 대문자로 시작하고 밑줄로 구분하도록 권장합니다.
+    constant_identifier_names: false
+    # 로컬 식별자에는 밑줄을 사용하지 마세요.
+    no_leading_underscores_for_local_identifiers: false
+    # BuildContext를 동기적으로 사용하지 않도록 권장합니다.
+    use_build_context_synchronously: false
 
 analyzer:
   plugins:
     - custom_lint
+  language:
+    strict-casts: true
+  errors:
+    # 코드 내에서 사용되지 않는 클래스, 메소드, 필드 등의 요소를 식별할 때 발생합니다.
+    unused_element: error
+    # 선언되었으나 코드 내에서 사용되지 않는 필드를 식별할 때 발생합니다.
+    unused_field: error
+    # 함수 또는 메소드 내에서 선언되었으나 사용되지 않는 지역 변수를 식별할 때 발생합니다.
+    unused_local_variable: error
+    # import 문에서 명시적으로 보여주기 위해 선언된 이름이 실제로 사용되지 않을 때 발생합니다.
+    unused_shown_name: error
+    # 파일에서 임포트되었으나 임포트된 선언이 전혀 사용되지 않을 때 발생합니다.
+    unused_import: error
+    # 함수나 메소드의 결과가 반환되었으나 사용되지 않을 때 발생합니다.
+    unused_result: error
+    unnecessary_null_checks: warning
+    # 생성자에서 선언되었으나 생성자 내부에서 사용되지 않는 매개변수를 식별할 때 발생합니다.
+    avoid_unused_constructor_parameters: error
+    # 예외를 캐치했으나 캐치 블록 내에서 예외 객체가 사용되지 않을 때 발생합니다.
+    unused_catch_clause: warning
+    # 원시 타입에 대한 연산이 실제로 아무런 효과가 없을 때 발생합니다.
+    noop_primitive_operations: warning
+    # 포함된 파일에 문제가 있을 때 발생하는 경고입니다.
+    included_file_warning: ignore
+    # Freezed를 json_serializable과 함께 사용하려면 invalid_annotation_target 경고를 비활성화
+    invalid_annotation_target: ignore
+    # @Deprecated로 주석이 달린 요소는 해당 요소가 선언된 패키지 내에서 참조해서는 안 됩니다.
+    deprecated_member_use_from_same_package: ignore
 
-linter:
-  # The lint rules applied to this project can be customized in the
-  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
-  # included above or to enable additional rules. A list of all available lints
-  # and their documentation is published at
-  # https://dart-lang.github.io/linter/lints/index.html.
-  #
-  # Instead of disabling a lint rule for the entire project in the
-  # section below, it can also be suppressed for a single line of code
-  # or a specific dart file by using the `// ignore: name_of_lint` and
-  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
-  # producing the lint.
-  rules:
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
-
-# Additional information about this file can be found at
+# 이 파일에 대한 자세한 정보는 다음에서 확인할 수 있습니다.
 # https://dart.dev/guides/language/analysis-options

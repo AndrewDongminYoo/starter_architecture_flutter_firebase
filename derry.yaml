@@ -1,0 +1,68 @@
+# Brief documentation for the YAML configuration file
+
+# Runs the Flutter app in Chrome in hot reload mode, ignoring deprecation warnings
+dev: flutter run -d chrome --hot --ignore-deprecation
+
+reinstall:
+  (description): Reinstalls the Flutter project by cleaning, getting dependencies, running builders, sorting imports, applying fixes, and formatting.
+  (scripts):
+    - flutter clean
+    - flutter pub get
+    - $bootstrap
+
+bootstrap:
+  (description): Runs builders to generate code, sorts imports, applies fixes, and formats code to bootstrap the project.
+  (scripts):
+    - $generate
+    - $format
+
+generate:
+  (description): Runs builders to generate code and sorts imports to prepare the project.
+  (scripts):
+    - dart run build_runner build --delete-conflicting-outputs
+
+format:
+  (description): Runs dart fix to apply automated fixes, sorts imports, and formats code to clean up and finalize the project.
+  (scripts):
+    - dart fix --apply
+    - dart run import_sorter:main -e --ignore-config
+    - dart format .
+
+# Installs the versions of the dependencies specified in the `pubspec.lock` file.
+ci: flutter pub get --enforce-lockfile
+
+# Compares the current dependencies in your project with the latest available versions and provides a list of dependencies that need to be updated.
+dry: flutter pub outdated --json > logs/outdated.json
+
+hard:
+  (description): Upgrades Flutter and Flutter packages to latest versions.
+  (scripts):
+    - flutter upgrade --force
+    - flutter packages upgrade --major-versions --tighten
+
+up:
+  (description): Upgrades the Flutter SDK and dependencies to the latest versions.
+  (scripts):
+    - flutter upgrade
+    - flutter packages upgrade
+
+# The --release flag builds a release version of the app. --tree-shake-icons removes unused icons from the bundle.
+build:
+  aab:
+    (description): Builds an Android App Bundle and opens it in Android Studio.
+    (scripts):
+      - flutter build appbundle --release --tree-shake-icons
+      - open -a 'Android Studio' build/app/outputs/bundle/release
+  ipa:
+    (description): Builds an iOS app (.app file) Bundle and opens it in Xcode.
+    (scripts):
+      - flutter build ipa --release --tree-shake-icons
+      - open -a 'Xcode' build/ios/archive/Runner.xcarchive
+  apk:
+    (description): Builds an Android APK.
+    (scripts):
+      - flutter build apk --release --tree-shake-icons
+  ios:
+    (description): Builds an iOS app (.ipa file).
+    (scripts):
+      - flutter build ios --release --tree-shake-icons
