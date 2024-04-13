@@ -6,11 +6,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 // 🌎 Project imports:
-import 'package:starter_architecture_flutter_firebase/src/features/authentication/data/firebase_auth_repository.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/authentication/domain/app_user.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/entries/data/entries_repository.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/entries/domain/entry.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/jobs/domain/job.dart';
+import '../../authentication/data/firebase_auth_repository.dart';
+import '../../authentication/domain/app_user.dart';
+import '../../entries/data/entries_repository.dart';
+import '../../entries/domain/entry.dart';
+import '../domain/job.dart';
 
 part 'jobs_repository.g.dart';
 

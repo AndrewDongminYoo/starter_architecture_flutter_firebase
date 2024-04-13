@@ -5,7 +5,7 @@ import 'dart:async';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 // 🌎 Project imports:
-import 'package:starter_architecture_flutter_firebase/src/features/onboarding/data/onboarding_repository.dart';
+import '../data/onboarding_repository.dart';
 
 part 'onboarding_controller.g.dart';
 

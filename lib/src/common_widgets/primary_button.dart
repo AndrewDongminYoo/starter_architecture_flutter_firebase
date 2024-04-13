@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import 'package:starter_architecture_flutter_firebase/src/constants/app_sizes.dart';
+import '../constants/app_sizes.dart';
 
 /// Primary button based on [ElevatedButton].
 /// Useful for CTAs in the app.

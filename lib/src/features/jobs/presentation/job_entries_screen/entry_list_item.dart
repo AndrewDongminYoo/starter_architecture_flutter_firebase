@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import 'package:starter_architecture_flutter_firebase/src/constants/app_sizes.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/entries/domain/entry.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/jobs/domain/job.dart';
-import 'package:starter_architecture_flutter_firebase/src/utils/format.dart';
+import '../../../../constants/app_sizes.dart';
+import '../../../entries/domain/entry.dart';
+import '../../domain/job.dart';
+import '../../../../utils/format.dart';
 
 class EntryListItem extends StatelessWidget {
   const EntryListItem({

@@ -10,9 +10,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 
 // 🌎 Project imports:
-import 'package:starter_architecture_flutter_firebase/firebase_options.dart';
-import 'package:starter_architecture_flutter_firebase/src/app.dart';
-import 'package:starter_architecture_flutter_firebase/src/localization/string_hardcoded.dart';
+import 'firebase_options.dart';
+import 'src/app.dart';
+import 'src/localization/string_hardcoded.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

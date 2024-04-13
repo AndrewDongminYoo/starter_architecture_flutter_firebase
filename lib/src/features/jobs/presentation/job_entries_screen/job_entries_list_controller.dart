@@ -5,9 +5,9 @@ import 'dart:async';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 // 🌎 Project imports:
-import 'package:starter_architecture_flutter_firebase/src/features/authentication/data/firebase_auth_repository.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/entries/data/entries_repository.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/entries/domain/entry.dart';
+import '../../../authentication/data/firebase_auth_repository.dart';
+import '../../../entries/data/entries_repository.dart';
+import '../../../entries/domain/entry.dart';
 
 part 'job_entries_list_controller.g.dart';
 

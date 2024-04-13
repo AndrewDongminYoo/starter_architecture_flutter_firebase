@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import 'package:starter_architecture_flutter_firebase/src/common_widgets/empty_placeholder_widget.dart';
+import '../common_widgets/empty_placeholder_widget.dart';
 
 /// Simple not found screen used for 404 errors (page not found on web)
 class NotFoundScreen extends StatelessWidget {

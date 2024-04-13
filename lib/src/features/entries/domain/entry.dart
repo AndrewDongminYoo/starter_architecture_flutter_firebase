@@ -2,7 +2,7 @@
 import 'package:equatable/equatable.dart';
 
 // 🌎 Project imports:
-import 'package:starter_architecture_flutter_firebase/src/features/jobs/domain/job.dart';
+import '../../jobs/domain/job.dart';
 
 typedef EntryID = String;
 

@@ -7,13 +7,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
-import 'package:starter_architecture_flutter_firebase/src/features/entries/data/entries_repository.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/entries/domain/entry.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/jobs/domain/job.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/jobs/presentation/job_entries_screen/entry_list_item.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/jobs/presentation/job_entries_screen/job_entries_list_controller.dart';
-import 'package:starter_architecture_flutter_firebase/src/routing/app_router.dart';
-import 'package:starter_architecture_flutter_firebase/src/utils/async_value_ui.dart';
+import '../../../entries/data/entries_repository.dart';
+import '../../../entries/domain/entry.dart';
+import '../../domain/job.dart';
+import 'entry_list_item.dart';
+import 'job_entries_list_controller.dart';
+import '../../../../routing/app_router.dart';
+import '../../../../utils/async_value_ui.dart';
 
 class JobEntriesList extends ConsumerWidget {
   const JobEntriesList({super.key, required this.job});

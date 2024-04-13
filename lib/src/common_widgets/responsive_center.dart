@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import 'package:starter_architecture_flutter_firebase/src/constants/breakpoints.dart';
+import '../constants/breakpoints.dart';
 
 /// Reusable widget for showing a child with a maximum content width constraint.
 /// If available width is larger than the maximum width, the child will be

@@ -2,8 +2,8 @@
 import 'package:equatable/equatable.dart';
 
 // 🌎 Project imports:
-import 'package:starter_architecture_flutter_firebase/src/features/entries/domain/entry.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/jobs/domain/job.dart';
+import 'entry.dart';
+import '../../jobs/domain/job.dart';
 
 class EntryJob extends Equatable {
   const EntryJob(this.entry, this.job);
