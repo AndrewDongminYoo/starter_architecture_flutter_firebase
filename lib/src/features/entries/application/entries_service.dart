@@ -3,16 +3,16 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:rxdart/rxdart.dart';
 
 // 🌎 Project imports:
-import '../../authentication/data/firebase_auth_repository.dart';
-import '../../authentication/domain/app_user.dart';
+import '../../../utils/format.dart';
+import '../../auth/data/firebase_auth_repository.dart';
+import '../../auth/domain/app_user.dart';
+import '../../jobs/data/jobs_repository.dart';
+import '../../jobs/domain/job.dart';
 import '../data/entries_repository.dart';
 import '../domain/daily_jobs_details.dart';
 import '../domain/entries_list_tile_model.dart';
 import '../domain/entry.dart';
 import '../domain/entry_job.dart';
-import '../../jobs/data/jobs_repository.dart';
-import '../../jobs/domain/job.dart';
-import '../../../utils/format.dart';
 
 part 'entries_service.g.dart';
 

@@ -13,11 +13,11 @@ import '../../../../common_widgets/date_time_picker.dart';
 import '../../../../common_widgets/responsive_center.dart';
 import '../../../../constants/app_sizes.dart';
 import '../../../../constants/breakpoints.dart';
-import '../../domain/entry.dart';
-import 'entry_screen_controller.dart';
-import '../../../jobs/domain/job.dart';
 import '../../../../utils/async_value_ui.dart';
 import '../../../../utils/format.dart';
+import '../../../jobs/domain/job.dart';
+import '../../domain/entry.dart';
+import 'entry_screen_controller.dart';
 
 class EntryScreen extends ConsumerStatefulWidget {
   const EntryScreen({super.key, required this.jobId, this.entryId, this.entry});

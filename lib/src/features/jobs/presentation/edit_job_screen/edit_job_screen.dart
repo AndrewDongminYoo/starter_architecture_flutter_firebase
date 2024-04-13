@@ -11,9 +11,9 @@ import 'package:go_router/go_router.dart';
 // 🌎 Project imports:
 import '../../../../common_widgets/responsive_center.dart';
 import '../../../../constants/breakpoints.dart';
+import '../../../../utils/async_value_ui.dart';
 import '../../domain/job.dart';
 import 'edit_job_screen_controller.dart';
-import '../../../../utils/async_value_ui.dart';
 
 class EditJobScreen extends ConsumerStatefulWidget {
   const EditJobScreen({super.key, this.jobId, this.job});

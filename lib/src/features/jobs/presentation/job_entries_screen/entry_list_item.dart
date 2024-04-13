@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
 import '../../../../constants/app_sizes.dart';
+import '../../../../utils/format.dart';
 import '../../../entries/domain/entry.dart';
 import '../../domain/job.dart';
-import '../../../../utils/format.dart';
 
 class EntryListItem extends StatelessWidget {
   const EntryListItem({

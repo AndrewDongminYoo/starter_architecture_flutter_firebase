@@ -6,9 +6,9 @@ import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 // 🌎 Project imports:
-import '../features/authentication/data/firebase_auth_repository.dart';
-import '../features/authentication/presentation/custom_profile_screen.dart';
-import '../features/authentication/presentation/custom_sign_in_screen.dart';
+import '../features/auth/data/firebase_auth_repository.dart';
+import '../features/auth/presentation/custom_profile_screen.dart';
+import '../features/auth/presentation/custom_sign_in_screen.dart';
 import '../features/entries/domain/entry.dart';
 import '../features/entries/presentation/entries_screen.dart';
 import '../features/entries/presentation/entry_screen/entry_screen.dart';

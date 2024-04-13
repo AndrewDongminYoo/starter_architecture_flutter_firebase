@@ -2,8 +2,8 @@
 import 'package:equatable/equatable.dart';
 
 // 🌎 Project imports:
-import 'entry.dart';
 import '../../jobs/domain/job.dart';
+import 'entry.dart';
 
 class EntryJob extends Equatable {
   const EntryJob(this.entry, this.job);

@@ -7,13 +7,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
+import '../../../../routing/app_router.dart';
+import '../../../../utils/async_value_ui.dart';
 import '../../../entries/data/entries_repository.dart';
 import '../../../entries/domain/entry.dart';
 import '../../domain/job.dart';
 import 'entry_list_item.dart';
 import 'job_entries_list_controller.dart';
-import '../../../../routing/app_router.dart';
-import '../../../../utils/async_value_ui.dart';
 
 class JobEntriesList extends ConsumerWidget {
   const JobEntriesList({super.key, required this.job});

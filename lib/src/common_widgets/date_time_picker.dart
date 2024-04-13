@@ -5,9 +5,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import 'input_dropdown.dart';
 import '../constants/app_sizes.dart';
 import '../utils/format.dart';
+import 'input_dropdown.dart';
 
 class DateTimePicker extends StatelessWidget {
   const DateTimePicker({

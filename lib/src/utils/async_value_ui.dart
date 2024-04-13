@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // 🌎 Project imports:
-import '../localization/string_hardcoded.dart';
 import 'alert_dialogs.dart';
 
 extension AsyncValueUI on AsyncValue {

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
@@ -10,9 +11,8 @@ import 'package:go_router/go_router.dart';
 import '../../../common_widgets/primary_button.dart';
 import '../../../common_widgets/responsive_center.dart';
 import '../../../constants/app_sizes.dart';
-import 'onboarding_controller.dart';
-import '../../../localization/string_hardcoded.dart';
 import '../../../routing/app_router.dart';
+import 'onboarding_controller.dart';
 
 class OnboardingScreen extends ConsumerWidget {
   const OnboardingScreen({super.key});

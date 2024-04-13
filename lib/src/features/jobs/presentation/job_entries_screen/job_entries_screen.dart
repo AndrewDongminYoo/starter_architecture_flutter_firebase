@@ -7,10 +7,10 @@ import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
 import '../../../../common_widgets/async_value_widget.dart';
+import '../../../../routing/app_router.dart';
 import '../../data/jobs_repository.dart';
 import '../../domain/job.dart';
 import 'job_entries_list.dart';
-import '../../../../routing/app_router.dart';
 
 class JobEntriesScreen extends ConsumerWidget {
   const JobEntriesScreen({super.key, required this.jobId});

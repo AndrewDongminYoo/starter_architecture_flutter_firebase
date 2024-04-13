@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
@@ -12,7 +13,6 @@ import 'package:flutter_web_plugins/url_strategy.dart';
 // 🌎 Project imports:
 import 'firebase_options.dart';
 import 'src/app.dart';
-import 'src/localization/string_hardcoded.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

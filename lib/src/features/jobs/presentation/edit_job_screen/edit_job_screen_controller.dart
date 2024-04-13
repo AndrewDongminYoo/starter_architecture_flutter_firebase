@@ -5,7 +5,7 @@ import 'dart:async';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 // 🌎 Project imports:
-import '../../../authentication/data/firebase_auth_repository.dart';
+import '../../../auth/data/firebase_auth_repository.dart';
 import '../../data/jobs_repository.dart';
 import '../../domain/job.dart';
 import 'job_submit_exception.dart';

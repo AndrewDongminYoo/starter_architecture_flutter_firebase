@@ -2,10 +2,8 @@
 import 'package:flutter/material.dart';
 
 // 📦 Package imports:
+import 'package:easy_localization/easy_localization.dart';
 import 'package:go_router/go_router.dart';
-
-// 🌎 Project imports:
-import '../localization/string_hardcoded.dart';
 
 // Stateful navigation based on:
 // https://github.com/flutter/packages/blob/main/packages/go_router/example/lib/stateful_shell_route.dart

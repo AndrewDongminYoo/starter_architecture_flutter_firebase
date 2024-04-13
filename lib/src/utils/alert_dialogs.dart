@@ -11,6 +11,7 @@ import 'package:flutter/services.dart';
 
 // 📦 Package imports:
 import 'package:firebase_core/firebase_core.dart';
+import 'package:go_router/go_router.dart';
 
 part 'show_alert_dialog.dart';
 part 'show_exception_alert_dialog.dart';
