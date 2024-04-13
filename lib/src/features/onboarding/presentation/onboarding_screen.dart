@@ -1,7 +1,12 @@
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/common_widgets/primary_button.dart';
 import 'package:starter_architecture_flutter_firebase/src/common_widgets/responsive_center.dart';
 import 'package:starter_architecture_flutter_firebase/src/constants/app_sizes.dart';
@@ -18,7 +23,7 @@ class OnboardingScreen extends ConsumerWidget {
     return Scaffold(
       body: ResponsiveCenter(
         maxContentWidth: 450,
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -37,7 +42,7 @@ class OnboardingScreen extends ConsumerWidget {
             ),
             gapH16,
             PrimaryButton(
-              text: 'Get Started'.hardcoded,
+              text: 'Get Started'.tr(),
               isLoading: state.isLoading,
               onPressed: state.isLoading
                   ? null

@@ -1,6 +1,11 @@
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/common_widgets/async_value_widget.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/jobs/data/jobs_repository.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/jobs/domain/job.dart';
@@ -9,6 +14,7 @@ import 'package:starter_architecture_flutter_firebase/src/routing/app_router.dar
 
 class JobEntriesScreen extends ConsumerWidget {
   const JobEntriesScreen({super.key, required this.jobId});
+
   final JobID jobId;
 
   @override
@@ -23,6 +29,7 @@ class JobEntriesScreen extends ConsumerWidget {
 
 class JobEntriesPageContents extends StatelessWidget {
   const JobEntriesPageContents({super.key, required this.job});
+
   final Job job;
 
   @override

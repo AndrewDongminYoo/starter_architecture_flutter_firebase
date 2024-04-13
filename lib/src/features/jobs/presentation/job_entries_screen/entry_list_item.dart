@@ -1,8 +1,11 @@
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/constants/app_sizes.dart';
-import 'package:starter_architecture_flutter_firebase/src/utils/format.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/entries/domain/entry.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/jobs/domain/job.dart';
+import 'package:starter_architecture_flutter_firebase/src/utils/format.dart';
 
 class EntryListItem extends StatelessWidget {
   const EntryListItem({
@@ -27,9 +30,7 @@ class EntryListItem extends StatelessWidget {
         ),
         child: Row(
           children: <Widget>[
-            Expanded(
-              child: _buildContents(context),
-            ),
+            Expanded(child: _buildContents(context)),
             const Icon(Icons.chevron_right, color: Colors.grey),
           ],
         ),
@@ -50,28 +51,34 @@ class EntryListItem extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Row(children: <Widget>[
-          Text(dayOfWeek,
-              style: const TextStyle(fontSize: 18.0, color: Colors.grey)),
-          gapW16,
-          Text(startDate, style: const TextStyle(fontSize: 18.0)),
-          if (job.ratePerHour > 0.0) ...<Widget>[
-            Expanded(child: Container()),
+        Row(
+          children: <Widget>[
             Text(
-              payFormatted,
-              style: TextStyle(fontSize: 16.0, color: Colors.green[700]),
+              dayOfWeek,
+              style: const TextStyle(fontSize: 18, color: Colors.grey),
             ),
+            gapW16,
+            Text(startDate, style: const TextStyle(fontSize: 18)),
+            if (job.ratePerHour > 0.0) ...<Widget>[
+              Expanded(child: Container()),
+              Text(
+                payFormatted,
+                style: TextStyle(fontSize: 16, color: Colors.green[700]),
+              ),
+            ],
           ],
-        ]),
-        Row(children: <Widget>[
-          Text('$startTime - $endTime', style: const TextStyle(fontSize: 16.0)),
-          Expanded(child: Container()),
-          Text(durationFormatted, style: const TextStyle(fontSize: 16.0)),
-        ]),
+        ),
+        Row(
+          children: <Widget>[
+            Text('$startTime - $endTime', style: const TextStyle(fontSize: 16)),
+            Expanded(child: Container()),
+            Text(durationFormatted, style: const TextStyle(fontSize: 16)),
+          ],
+        ),
         if (entry.comment.isNotEmpty)
           Text(
             entry.comment,
-            style: const TextStyle(fontSize: 12.0),
+            style: const TextStyle(fontSize: 12),
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
           ),
@@ -103,11 +110,7 @@ class DismissibleEntryListItem extends StatelessWidget {
       key: dismissibleKey,
       direction: DismissDirection.endToStart,
       onDismissed: (direction) => onDismissed?.call(),
-      child: EntryListItem(
-        entry: entry,
-        job: job,
-        onTap: onTap,
-      ),
+      child: EntryListItem(entry: entry, job: job, onTap: onTap),
     );
   }
 }

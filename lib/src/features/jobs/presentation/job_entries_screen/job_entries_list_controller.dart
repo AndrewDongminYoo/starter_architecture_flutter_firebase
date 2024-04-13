@@ -1,6 +1,10 @@
+// 🎯 Dart imports:
 import 'dart:async';
 
+// 📦 Package imports:
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/features/authentication/data/firebase_auth_repository.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/entries/data/entries_repository.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/entries/domain/entry.dart';
@@ -17,11 +21,12 @@ class JobsEntriesListController extends _$JobsEntriesListController {
   Future<void> deleteEntry(EntryID entryId) async {
     final currentUser = ref.read(authRepositoryProvider).currentUser;
     if (currentUser == null) {
-      throw AssertionError('User can\'t be null');
+      throw AssertionError("User can't be null");
     }
     final repository = ref.read(entriesRepositoryProvider);
     state = const AsyncLoading();
     state = await AsyncValue.guard(
-        () => repository.deleteEntry(uid: currentUser.uid, entryId: entryId));
+      () => repository.deleteEntry(uid: currentUser.uid, entryId: entryId),
+    );
   }
 }

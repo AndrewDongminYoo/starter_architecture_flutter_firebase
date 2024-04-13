@@ -68,21 +68,13 @@ class JobStreamFamily extends Family<AsyncValue<Job>> {
   const JobStreamFamily();
 
   /// See also [jobStream].
-  JobStreamProvider call(
-    String jobId,
-  ) {
-    return JobStreamProvider(
-      jobId,
-    );
+  JobStreamProvider call(String jobId) {
+    return JobStreamProvider(jobId);
   }
 
   @override
-  JobStreamProvider getProviderOverride(
-    covariant JobStreamProvider provider,
-  ) {
-    return call(
-      provider.jobId,
-    );
+  JobStreamProvider getProviderOverride(covariant JobStreamProvider provider) {
+    return call(provider.jobId);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -103,52 +95,42 @@ class JobStreamFamily extends Family<AsyncValue<Job>> {
 /// See also [jobStream].
 class JobStreamProvider extends AutoDisposeStreamProvider<Job> {
   /// See also [jobStream].
-  JobStreamProvider(
-    String jobId,
-  ) : this._internal(
-          (ref) => jobStream(
-            ref as JobStreamRef,
-            jobId,
-          ),
-          from: jobStreamProvider,
-          name: r'jobStreamProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$jobStreamHash,
-          dependencies: JobStreamFamily._dependencies,
-          allTransitiveDependencies: JobStreamFamily._allTransitiveDependencies,
-          jobId: jobId,
-        );
+  JobStreamProvider(String jobId)
+      : this._internal((ref) => jobStream(ref as JobStreamRef, jobId),
+            from: jobStreamProvider,
+            name: r'jobStreamProvider',
+            debugGetCreateSourceHash:
+                const bool.fromEnvironment('dart.vm.product')
+                    ? null
+                    : _$jobStreamHash,
+            dependencies: JobStreamFamily._dependencies,
+            allTransitiveDependencies:
+                JobStreamFamily._allTransitiveDependencies,
+            jobId: jobId);
 
-  JobStreamProvider._internal(
-    super._createNotifier, {
-    required super.name,
-    required super.dependencies,
-    required super.allTransitiveDependencies,
-    required super.debugGetCreateSourceHash,
-    required super.from,
-    required this.jobId,
-  }) : super.internal();
+  JobStreamProvider._internal(super._createNotifier,
+      {required super.name,
+      required super.dependencies,
+      required super.allTransitiveDependencies,
+      required super.debugGetCreateSourceHash,
+      required super.from,
+      required this.jobId})
+      : super.internal();
 
   final String jobId;
 
   @override
-  Override overrideWith(
-    Stream<Job> Function(JobStreamRef provider) create,
-  ) {
+  Override overrideWith(Stream<Job> Function(JobStreamRef provider) create) {
     return ProviderOverride(
-      origin: this,
-      override: JobStreamProvider._internal(
-        (ref) => create(ref as JobStreamRef),
-        from: from,
-        name: null,
-        dependencies: null,
-        allTransitiveDependencies: null,
-        debugGetCreateSourceHash: null,
-        jobId: jobId,
-      ),
-    );
+        origin: this,
+        override: JobStreamProvider._internal(
+            (ref) => create(ref as JobStreamRef),
+            from: from,
+            name: null,
+            dependencies: null,
+            allTransitiveDependencies: null,
+            debugGetCreateSourceHash: null,
+            jobId: jobId));
   }
 
   @override

@@ -1,3 +1,4 @@
+// 🐦 Flutter imports:
 import 'package:flutter/cupertino.dart';
 
 class SegmentedControl<T extends Object> extends StatelessWidget {
@@ -8,6 +9,7 @@ class SegmentedControl<T extends Object> extends StatelessWidget {
     required this.children,
     required this.onValueChanged,
   });
+
   final Widget header;
   final T value;
   final Map<T, Widget> children;
@@ -19,7 +21,7 @@ class SegmentedControl<T extends Object> extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: header,
         ),
         SizedBox(

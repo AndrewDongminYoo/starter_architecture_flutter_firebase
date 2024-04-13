@@ -1,6 +1,11 @@
-import 'package:firebase_ui_auth/firebase_ui_auth.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/features/authentication/presentation/auth_providers.dart';
 
 class CustomProfileScreen extends ConsumerWidget {
@@ -10,9 +15,7 @@ class CustomProfileScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final authProviders = ref.watch(authProvidersProvider);
     return ProfileScreen(
-      appBar: AppBar(
-        title: const Text('Profile'),
-      ),
+      appBar: AppBar(title: const Text('Profile')),
       providers: authProviders,
     );
   }

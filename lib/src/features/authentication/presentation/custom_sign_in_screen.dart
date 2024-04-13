@@ -1,10 +1,14 @@
-import 'package:firebase_ui_auth/firebase_ui_auth.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/constants/app_sizes.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/authentication/data/firebase_auth_repository.dart';
-
-import 'auth_providers.dart';
+import 'package:starter_architecture_flutter_firebase/src/features/authentication/presentation/auth_providers.dart';
 
 class CustomSignInScreen extends ConsumerWidget {
   const CustomSignInScreen({super.key});
@@ -13,9 +17,7 @@ class CustomSignInScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final authProviders = ref.watch(authProvidersProvider);
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sign in'),
-      ),
+      appBar: AppBar(title: const Text('Sign in')),
       body: SignInScreen(
         providers: authProviders,
         footerBuilder: (context, action) => const SignInAnonymouslyFooter(),

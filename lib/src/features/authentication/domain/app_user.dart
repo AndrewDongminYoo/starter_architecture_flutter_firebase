@@ -1,18 +1,22 @@
+// 🐦 Flutter imports:
+import 'package:flutter/foundation.dart';
+
 /// Type defining a user ID from Firebase.
 typedef UserID = String;
 
 /// Simple class representing the user UID and email.
+@immutable
 class AppUser {
-  const AppUser({
-    required this.uid,
-    required this.email,
-  });
+  const AppUser({required this.uid, required this.email});
+
   final String uid;
   final String email;
 
   @override
   bool operator ==(Object other) {
-    if (identical(this, other)) return true;
+    if (identical(this, other)) {
+      return true;
+    }
 
     return other is AppUser && other.uid == uid && other.email == email;
   }

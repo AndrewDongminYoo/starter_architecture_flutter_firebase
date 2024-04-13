@@ -1,4 +1,7 @@
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/common_widgets/responsive_center.dart';
 import 'package:starter_architecture_flutter_firebase/src/constants/app_sizes.dart';
 import 'package:starter_architecture_flutter_firebase/src/constants/breakpoints.dart';
@@ -8,6 +11,7 @@ import 'package:starter_architecture_flutter_firebase/src/constants/breakpoints.
 class ResponsiveScrollableCard extends StatelessWidget {
   const ResponsiveScrollableCard({super.key, required this.child});
   final Widget child;
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(

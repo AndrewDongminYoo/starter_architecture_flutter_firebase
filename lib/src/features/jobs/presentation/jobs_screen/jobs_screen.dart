@@ -1,7 +1,12 @@
-import 'package:firebase_ui_firestore/firebase_ui_firestore.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:firebase_ui_firestore/firebase_ui_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/constants/strings.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/jobs/data/jobs_repository.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/jobs/domain/job.dart';
@@ -34,9 +39,8 @@ class JobsScreen extends StatelessWidget {
           return FirestoreListView<Job>(
             query: jobsQuery,
             emptyBuilder: (context) => const Center(child: Text('No data')),
-            errorBuilder: (context, error, stackTrace) => Center(
-              child: Text(error.toString()),
-            ),
+            errorBuilder: (context, error, stackTrace) =>
+                Center(child: Text(error.toString())),
             loadingBuilder: (context) =>
                 const Center(child: CircularProgressIndicator()),
             itemBuilder: (context, doc) {
@@ -66,6 +70,7 @@ class JobsScreen extends StatelessWidget {
 
 class JobListTile extends StatelessWidget {
   const JobListTile({super.key, required this.job, this.onTap});
+
   final Job job;
   final VoidCallback? onTap;
 

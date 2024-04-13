@@ -1,6 +1,11 @@
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/constants/app_sizes.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/onboarding/data/onboarding_repository.dart';
 
@@ -20,6 +25,7 @@ Future<void> appStartup(AppStartupRef ref) async {
 /// Widget class to manage asynchronous app initialization
 class AppStartupWidget extends ConsumerWidget {
   const AppStartupWidget({super.key, required this.onLoaded});
+
   final WidgetBuilder onLoaded;
 
   @override
@@ -43,16 +49,18 @@ class AppStartupLoadingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const Center(
-        child: CircularProgressIndicator(),
-      ),
+      body: const Center(child: CircularProgressIndicator()),
     );
   }
 }
 
 class AppStartupErrorWidget extends StatelessWidget {
-  const AppStartupErrorWidget(
-      {super.key, required this.message, required this.onRetry});
+  const AppStartupErrorWidget({
+    super.key,
+    required this.message,
+    required this.onRetry,
+  });
+
   final String message;
   final VoidCallback onRetry;
 
@@ -66,10 +74,7 @@ class AppStartupErrorWidget extends StatelessWidget {
           children: [
             Text(message, style: Theme.of(context).textTheme.headlineSmall),
             gapH16,
-            ElevatedButton(
-              onPressed: onRetry,
-              child: const Text('Retry'),
-            ),
+            ElevatedButton(onPressed: onRetry, child: const Text('Retry')),
           ],
         ),
       ),

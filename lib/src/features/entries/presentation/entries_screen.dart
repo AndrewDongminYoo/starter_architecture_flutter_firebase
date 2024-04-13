@@ -1,10 +1,15 @@
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// 🌎 Project imports:
+import 'package:starter_architecture_flutter_firebase/src/common_widgets/list_items_builder.dart';
 import 'package:starter_architecture_flutter_firebase/src/constants/app_sizes.dart';
 import 'package:starter_architecture_flutter_firebase/src/constants/strings.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/entries/domain/entries_list_tile_model.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/entries/application/entries_service.dart';
-import 'package:starter_architecture_flutter_firebase/src/common_widgets/list_items_builder.dart';
+import 'package:starter_architecture_flutter_firebase/src/features/entries/domain/entries_list_tile_model.dart';
 
 class EntriesScreen extends ConsumerWidget {
   const EntriesScreen({super.key});
@@ -12,9 +17,7 @@ class EntriesScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(Strings.entries),
-      ),
+      appBar: AppBar(title: const Text(Strings.entries)),
       body: Consumer(
         builder: (context, ref, child) {
           // * This data is combined from two streams, so it can't be returned
@@ -34,6 +37,7 @@ class EntriesScreen extends ConsumerWidget {
 
 class EntriesListTile extends StatelessWidget {
   const EntriesListTile({super.key, required this.model});
+
   final EntriesListTileModel model;
 
   @override
@@ -56,7 +60,7 @@ class EntriesListTile extends StatelessWidget {
               textAlign: TextAlign.right,
             ),
           SizedBox(
-            width: 60.0,
+            width: 60,
             child: Text(
               model.trailingText,
               style: const TextStyle(fontSize: fontSize),

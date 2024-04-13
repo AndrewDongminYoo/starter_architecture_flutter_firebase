@@ -1,4 +1,7 @@
+// 📦 Package imports:
 import 'package:equatable/equatable.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/features/jobs/domain/job.dart';
 
 typedef EntryID = String;
@@ -11,6 +14,18 @@ class Entry extends Equatable {
     required this.end,
     required this.comment,
   });
+  factory Entry.fromMap(Map<dynamic, dynamic> value, EntryID id) {
+    final startMilliseconds = value['start'] as int;
+    final endMilliseconds = value['end'] as int;
+    return Entry(
+      id: id,
+      jobId: value['jobId'] as String,
+      start: DateTime.fromMillisecondsSinceEpoch(startMilliseconds),
+      end: DateTime.fromMillisecondsSinceEpoch(endMilliseconds),
+      comment: value['comment'] as String? ?? '',
+    );
+  }
+
   final EntryID id;
   final JobID jobId;
   final DateTime start;
@@ -25,18 +40,6 @@ class Entry extends Equatable {
 
   double get durationInHours =>
       end.difference(start).inMinutes.toDouble() / 60.0;
-
-  factory Entry.fromMap(Map<dynamic, dynamic> value, EntryID id) {
-    final startMilliseconds = value['start'] as int;
-    final endMilliseconds = value['end'] as int;
-    return Entry(
-      id: id,
-      jobId: value['jobId'] as String,
-      start: DateTime.fromMillisecondsSinceEpoch(startMilliseconds),
-      end: DateTime.fromMillisecondsSinceEpoch(endMilliseconds),
-      comment: value['comment'] as String? ?? '',
-    );
-  }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{

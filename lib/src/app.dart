@@ -1,5 +1,10 @@
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/routing/app_router.dart';
 
 class MyApp extends ConsumerWidget {
@@ -18,7 +23,7 @@ class MyApp extends ConsumerWidget {
         appBarTheme: const AppBarTheme(
           backgroundColor: primaryColor,
           foregroundColor: Colors.white,
-          elevation: 2.0,
+          elevation: 2,
           centerTitle: true,
         ),
         scaffoldBackgroundColor: Colors.grey[200],

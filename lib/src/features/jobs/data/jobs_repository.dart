@@ -1,7 +1,11 @@
+// 🎯 Dart imports:
 import 'dart:async';
 
+// 📦 Package imports:
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/features/authentication/data/firebase_auth_repository.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/authentication/domain/app_user.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/entries/data/entries_repository.dart';
@@ -19,14 +23,14 @@ class JobsRepository {
   static String entriesPath(String uid) => EntriesRepository.entriesPath(uid);
 
   // create
-  Future<void> addJob(
-          {required UserID uid,
-          required String name,
-          required int ratePerHour}) =>
-      _firestore.collection(jobsPath(uid)).add({
-        'name': name,
-        'ratePerHour': ratePerHour,
-      });
+  Future<void> addJob({
+    required UserID uid,
+    required String name,
+    required int ratePerHour,
+  }) =>
+      _firestore
+          .collection(jobsPath(uid))
+          .add({'name': name, 'ratePerHour': ratePerHour});
 
   // update
   Future<void> updateJob({required UserID uid, required Job job}) =>
@@ -86,7 +90,7 @@ JobsRepository jobsRepository(JobsRepositoryRef ref) {
 Query<Job> jobsQuery(JobsQueryRef ref) {
   final user = ref.watch(firebaseAuthProvider).currentUser;
   if (user == null) {
-    throw AssertionError('User can\'t be null');
+    throw AssertionError("User can't be null");
   }
   final repository = ref.watch(jobsRepositoryProvider);
   return repository.queryJobs(uid: user.uid);
@@ -96,7 +100,7 @@ Query<Job> jobsQuery(JobsQueryRef ref) {
 Stream<Job> jobStream(JobStreamRef ref, JobID jobId) {
   final user = ref.watch(firebaseAuthProvider).currentUser;
   if (user == null) {
-    throw AssertionError('User can\'t be null');
+    throw AssertionError("User can't be null");
   }
   final repository = ref.watch(jobsRepositoryProvider);
   return repository.watchJob(uid: user.uid, jobId: jobId);

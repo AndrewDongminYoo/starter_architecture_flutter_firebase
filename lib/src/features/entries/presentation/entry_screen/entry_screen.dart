@@ -1,20 +1,27 @@
+// 🎯 Dart imports:
 import 'dart:async';
 
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/common_widgets/date_time_picker.dart';
 import 'package:starter_architecture_flutter_firebase/src/common_widgets/responsive_center.dart';
 import 'package:starter_architecture_flutter_firebase/src/constants/app_sizes.dart';
 import 'package:starter_architecture_flutter_firebase/src/constants/breakpoints.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/entries/domain/entry.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/jobs/domain/job.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/entries/presentation/entry_screen/entry_screen_controller.dart';
+import 'package:starter_architecture_flutter_firebase/src/features/jobs/domain/job.dart';
 import 'package:starter_architecture_flutter_firebase/src/utils/async_value_ui.dart';
 import 'package:starter_architecture_flutter_firebase/src/utils/format.dart';
 
 class EntryScreen extends ConsumerStatefulWidget {
   const EntryScreen({super.key, required this.jobId, this.entryId, this.entry});
+
   final JobID jobId;
   final EntryID? entryId;
   final Entry? entry;
@@ -30,10 +37,20 @@ class _EntryPageState extends ConsumerState<EntryScreen> {
   late TimeOfDay _endTime;
   late String _comment;
 
-  DateTime get start => DateTime(_startDate.year, _startDate.month,
-      _startDate.day, _startTime.hour, _startTime.minute);
-  DateTime get end => DateTime(_endDate.year, _endDate.month, _endDate.day,
-      _endTime.hour, _endTime.minute);
+  DateTime get start => DateTime(
+        _startDate.year,
+        _startDate.month,
+        _startDate.day,
+        _startTime.hour,
+        _startTime.minute,
+      );
+  DateTime get end => DateTime(
+        _endDate.year,
+        _endDate.month,
+        _endDate.day,
+        _endTime.hour,
+        _endTime.minute,
+      );
 
   @override
   void initState() {
@@ -74,11 +91,11 @@ class _EntryPageState extends ConsumerState<EntryScreen> {
         title: Text(widget.entry != null ? 'Edit Entry' : 'New Entry'),
         actions: <Widget>[
           TextButton(
+            onPressed: _setEntryAndDismiss,
             child: Text(
               widget.entry != null ? 'Update' : 'Create',
-              style: const TextStyle(fontSize: 18.0, color: Colors.white),
+              style: const TextStyle(fontSize: 18, color: Colors.white),
             ),
-            onPressed: () => _setEntryAndDismiss(),
           ),
         ],
       ),
@@ -131,7 +148,7 @@ class _EntryPageState extends ConsumerState<EntryScreen> {
       children: <Widget>[
         Text(
           'Duration: $durationFormatted',
-          style: const TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
@@ -146,10 +163,10 @@ class _EntryPageState extends ConsumerState<EntryScreen> {
       controller: TextEditingController(text: _comment),
       decoration: const InputDecoration(
         labelText: 'Comment',
-        labelStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
+        labelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
       ),
       keyboardAppearance: Brightness.light,
-      style: const TextStyle(fontSize: 20.0, color: Colors.black),
+      style: const TextStyle(fontSize: 20, color: Colors.black),
       maxLines: null,
       onChanged: (comment) => _comment = comment,
     );

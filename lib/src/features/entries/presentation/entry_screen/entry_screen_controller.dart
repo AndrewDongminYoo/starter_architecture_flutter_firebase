@@ -1,6 +1,10 @@
+// 🎯 Dart imports:
 import 'dart:async';
 
+// 📦 Package imports:
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/features/authentication/data/firebase_auth_repository.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/entries/data/entries_repository.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/entries/domain/entry.dart';
@@ -24,18 +28,20 @@ class EntryScreenController extends _$EntryScreenController {
   }) async {
     final currentUser = ref.read(authRepositoryProvider).currentUser;
     if (currentUser == null) {
-      throw AssertionError('User can\'t be null');
+      throw AssertionError("User can't be null");
     }
     final repository = ref.read(entriesRepositoryProvider);
     state = const AsyncLoading();
     if (entryId == null) {
-      state = await AsyncValue.guard(() => repository.addEntry(
-            uid: currentUser.uid,
-            jobId: jobId,
-            start: start,
-            end: end,
-            comment: comment,
-          ));
+      state = await AsyncValue.guard(
+        () => repository.addEntry(
+          uid: currentUser.uid,
+          jobId: jobId,
+          start: start,
+          end: end,
+          comment: comment,
+        ),
+      );
     } else {
       final entry = Entry(
         id: entryId,
@@ -45,7 +51,8 @@ class EntryScreenController extends _$EntryScreenController {
         comment: comment,
       );
       state = await AsyncValue.guard(
-          () => repository.updateEntry(uid: currentUser.uid, entry: entry));
+        () => repository.updateEntry(uid: currentUser.uid, entry: entry),
+      );
     }
     return state.hasError == false;
   }

@@ -1,16 +1,17 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:go_router/go_router.dart';
 
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/localization/string_hardcoded.dart';
 
 // Stateful navigation based on:
 // https://github.com/flutter/packages/blob/main/packages/go_router/example/lib/stateful_shell_route.dart
 class ScaffoldWithNestedNavigation extends StatelessWidget {
-  const ScaffoldWithNestedNavigation({
-    Key? key,
-    required this.navigationShell,
-  }) : super(key: key ?? const ValueKey('ScaffoldWithNestedNavigation'));
+  const ScaffoldWithNestedNavigation({Key? key, required this.navigationShell})
+      : super(key: key ?? const ValueKey('ScaffoldWithNestedNavigation'));
   final StatefulNavigationShell navigationShell;
 
   void _goBranch(int index) {
@@ -50,6 +51,7 @@ class ScaffoldWithNavigationBar extends StatelessWidget {
     required this.currentIndex,
     required this.onDestinationSelected,
   });
+
   final Widget body;
   final int currentIndex;
   final ValueChanged<int> onDestinationSelected;
@@ -65,17 +67,17 @@ class ScaffoldWithNavigationBar extends StatelessWidget {
           NavigationDestination(
             icon: const Icon(Icons.work_outline),
             selectedIcon: const Icon(Icons.work),
-            label: 'Jobs'.hardcoded,
+            label: 'Jobs'.tr(),
           ),
           NavigationDestination(
             icon: const Icon(Icons.view_headline_outlined),
             selectedIcon: const Icon(Icons.view_headline),
-            label: 'Entries'.hardcoded,
+            label: 'Entries'.tr(),
           ),
           NavigationDestination(
             icon: const Icon(Icons.person_outline),
             selectedIcon: const Icon(Icons.person),
-            label: 'Account'.hardcoded,
+            label: 'Account'.tr(),
           ),
         ],
         onDestinationSelected: onDestinationSelected,
@@ -91,6 +93,7 @@ class ScaffoldWithNavigationRail extends StatelessWidget {
     required this.currentIndex,
     required this.onDestinationSelected,
   });
+
   final Widget body;
   final int currentIndex;
   final ValueChanged<int> onDestinationSelected;
@@ -108,25 +111,23 @@ class ScaffoldWithNavigationRail extends StatelessWidget {
               NavigationRailDestination(
                 icon: const Icon(Icons.work_outline),
                 selectedIcon: const Icon(Icons.work),
-                label: Text('Jobs'.hardcoded),
+                label: Text('Jobs'.tr()),
               ),
               NavigationRailDestination(
                 icon: const Icon(Icons.view_headline_outlined),
                 selectedIcon: const Icon(Icons.view_headline),
-                label: Text('Entries'.hardcoded),
+                label: Text('Entries'.tr()),
               ),
               NavigationRailDestination(
                 icon: const Icon(Icons.person_outline),
                 selectedIcon: const Icon(Icons.person),
-                label: Text('Account'.hardcoded),
+                label: Text('Account'.tr()),
               ),
             ],
           ),
           const VerticalDivider(thickness: 1, width: 1),
           // This is the main content.
-          Expanded(
-            child: body,
-          ),
+          Expanded(child: body),
         ],
       ),
     );

@@ -1,7 +1,12 @@
-import 'package:firebase_ui_firestore/firebase_ui_firestore.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:firebase_ui_firestore/firebase_ui_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/features/entries/data/entries_repository.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/entries/domain/entry.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/jobs/domain/job.dart';
@@ -12,6 +17,7 @@ import 'package:starter_architecture_flutter_firebase/src/utils/async_value_ui.d
 
 class JobEntriesList extends ConsumerWidget {
   const JobEntriesList({super.key, required this.job});
+
   final Job job;
 
   @override

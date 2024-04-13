@@ -1,4 +1,7 @@
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/constants/app_sizes.dart';
 
 /// Primary button based on [ElevatedButton].
@@ -8,11 +11,17 @@ import 'package:starter_architecture_flutter_firebase/src/constants/app_sizes.da
 /// the text.
 /// @param onPressed - callback to be called when the button is pressed.
 class PrimaryButton extends StatelessWidget {
-  const PrimaryButton(
-      {super.key, required this.text, this.isLoading = false, this.onPressed});
+  const PrimaryButton({
+    super.key,
+    required this.text,
+    this.isLoading = false,
+    this.onPressed,
+  });
+
   final String text;
   final bool isLoading;
   final VoidCallback? onPressed;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(

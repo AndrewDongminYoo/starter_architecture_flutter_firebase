@@ -1,6 +1,10 @@
+// 🎯 Dart imports:
 import 'dart:async';
 
+// 📦 Package imports:
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/features/authentication/data/firebase_auth_repository.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/jobs/data/jobs_repository.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/jobs/domain/job.dart';
@@ -15,14 +19,15 @@ class EditJobScreenController extends _$EditJobScreenController {
     //
   }
 
-  Future<bool> submit(
-      {JobID? jobId,
-      Job? oldJob,
-      required String name,
-      required int ratePerHour}) async {
+  Future<bool> submit({
+    JobID? jobId,
+    Job? oldJob,
+    required String name,
+    required int ratePerHour,
+  }) async {
     final currentUser = ref.read(authRepositoryProvider).currentUser;
     if (currentUser == null) {
-      throw AssertionError('User can\'t be null');
+      throw AssertionError("User can't be null");
     }
     // set loading state
     state = const AsyncLoading().copyWithPrevious(state);
@@ -49,7 +54,10 @@ class EditJobScreenController extends _$EditJobScreenController {
       } else {
         state = await AsyncValue.guard(
           () => repository.addJob(
-              uid: currentUser.uid, name: name, ratePerHour: ratePerHour),
+            uid: currentUser.uid,
+            name: name,
+            ratePerHour: ratePerHour,
+          ),
         );
       }
       return state.hasError == false;

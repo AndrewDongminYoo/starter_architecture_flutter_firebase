@@ -1,6 +1,10 @@
+// 🎯 Dart imports:
 import 'dart:async';
 
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/common_widgets/input_dropdown.dart';
 import 'package:starter_architecture_flutter_firebase/src/constants/app_sizes.dart';
 import 'package:starter_architecture_flutter_firebase/src/utils/format.dart';
@@ -25,7 +29,7 @@ class DateTimePicker extends StatelessWidget {
     final pickedDate = await showDatePicker(
       context: context,
       initialDate: selectedDate,
-      firstDate: DateTime(2019, 1),
+      firstDate: DateTime(2019),
       lastDate: DateTime(2100),
     );
     if (pickedDate != null && pickedDate != selectedDate) {

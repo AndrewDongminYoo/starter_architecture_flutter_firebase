@@ -1,8 +1,14 @@
+// 🎯 Dart imports:
 import 'dart:async';
 
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/common_widgets/responsive_center.dart';
 import 'package:starter_architecture_flutter_firebase/src/constants/breakpoints.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/jobs/domain/job.dart';
@@ -11,6 +17,7 @@ import 'package:starter_architecture_flutter_firebase/src/utils/async_value_ui.d
 
 class EditJobScreen extends ConsumerStatefulWidget {
   const EditJobScreen({super.key, this.jobId, this.job});
+
   final JobID? jobId;
   final Job? job;
 
@@ -85,10 +92,10 @@ class _EditJobPageState extends ConsumerState<EditJobScreen> {
     return SingleChildScrollView(
       child: ResponsiveCenter(
         maxContentWidth: Breakpoint.tablet,
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Card(
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16),
             child: _buildForm(),
           ),
         ),
@@ -113,17 +120,14 @@ class _EditJobPageState extends ConsumerState<EditJobScreen> {
         keyboardAppearance: Brightness.light,
         initialValue: _name,
         validator: (value) =>
-            (value ?? '').isNotEmpty ? null : 'Name can\'t be empty',
+            (value ?? '').isNotEmpty ? null : "Name can't be empty",
         onSaved: (value) => _name = value,
       ),
       TextFormField(
         decoration: const InputDecoration(labelText: 'Rate per hour'),
         keyboardAppearance: Brightness.light,
         initialValue: _ratePerHour != null ? '$_ratePerHour' : null,
-        keyboardType: const TextInputType.numberWithOptions(
-          signed: false,
-          decimal: false,
-        ),
+        keyboardType: TextInputType.number,
         onSaved: (value) => _ratePerHour = int.tryParse(value ?? '') ?? 0,
       ),
     ];

@@ -1,3 +1,4 @@
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/features/entries/domain/entry_job.dart';
 
 /// Temporary model class to store the time tracked and pay for a job
@@ -7,6 +8,7 @@ class JobDetails {
     required this.durationInHours,
     required this.pay,
   });
+
   final String name;
   double durationInHours;
   double pay;
@@ -15,6 +17,7 @@ class JobDetails {
 /// Groups together all jobs/entries on a given day
 class DailyJobsDetails {
   DailyJobsDetails({required this.date, required this.jobsDetails});
+
   final DateTime date;
   final List<JobDetails> jobsDetails;
 
@@ -28,10 +31,13 @@ class DailyJobsDetails {
 
   /// splits all entries into separate groups by date
   static Map<DateTime, List<EntryJob>> _entriesByDate(List<EntryJob> entries) {
-    final Map<DateTime, List<EntryJob>> map = {};
+    final map = <DateTime, List<EntryJob>>{};
     for (final entryJob in entries) {
-      final entryDayStart = DateTime(entryJob.entry.start.year,
-          entryJob.entry.start.month, entryJob.entry.start.day);
+      final entryDayStart = DateTime(
+        entryJob.entry.start.year,
+        entryJob.entry.start.month,
+        entryJob.entry.start.day,
+      );
       if (map[entryDayStart] == null) {
         map[entryDayStart] = [entryJob];
       } else {
@@ -44,7 +50,7 @@ class DailyJobsDetails {
   /// maps an unordered list of EntryJob into a list of DailyJobsDetails with date information
   static List<DailyJobsDetails> all(List<EntryJob> entries) {
     final byDate = _entriesByDate(entries);
-    final List<DailyJobsDetails> list = [];
+    final list = <DailyJobsDetails>[];
     for (final pair in byDate.entries) {
       final date = pair.key;
       final entriesByDate = pair.value;
@@ -56,7 +62,7 @@ class DailyJobsDetails {
 
   /// groups entries by job
   static List<JobDetails> _jobsDetails(List<EntryJob> entries) {
-    final Map<String, JobDetails> jobDuration = {};
+    final jobDuration = <String, JobDetails>{};
     for (final entryJob in entries) {
       final entry = entryJob.entry;
       final pay = entry.durationInHours * entryJob.job.ratePerHour;

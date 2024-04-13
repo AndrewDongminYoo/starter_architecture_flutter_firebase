@@ -1,4 +1,7 @@
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/constants/breakpoints.dart';
 
 /// Reusable widget for showing a child with a maximum content width constraint.
@@ -13,6 +16,7 @@ class ResponsiveCenter extends StatelessWidget {
     this.padding = EdgeInsets.zero,
     required this.child,
   });
+
   final double maxContentWidth;
   final EdgeInsetsGeometry padding;
   final Widget child;
@@ -26,10 +30,7 @@ class ResponsiveCenter extends StatelessWidget {
       // https://twitter.com/biz84/status/1445400059894542337
       child: SizedBox(
         width: maxContentWidth,
-        child: Padding(
-          padding: padding,
-          child: child,
-        ),
+        child: Padding(padding: padding, child: child),
       ),
     );
   }
@@ -43,9 +44,11 @@ class ResponsiveSliverCenter extends StatelessWidget {
     this.padding = EdgeInsets.zero,
     required this.child,
   });
+
   final double maxContentWidth;
   final EdgeInsetsGeometry padding;
   final Widget child;
+
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(

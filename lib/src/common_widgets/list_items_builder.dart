@@ -1,5 +1,10 @@
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/common_widgets/empty_content.dart';
 
 typedef ItemWidgetBuilder<T> = Widget Function(BuildContext context, T item);
@@ -10,6 +15,7 @@ class ListItemsBuilder<T> extends StatelessWidget {
     required this.data,
     required this.itemBuilder,
   });
+
   final AsyncValue<List<T>> data;
   final ItemWidgetBuilder<T> itemBuilder;
 
@@ -31,7 +37,7 @@ class ListItemsBuilder<T> extends StatelessWidget {
       loading: () => const Center(child: CircularProgressIndicator()),
       error: (_, __) => const EmptyContent(
         title: 'Something went wrong',
-        message: 'Can\'t load items right now',
+        message: "Can't load items right now",
       ),
     );
   }

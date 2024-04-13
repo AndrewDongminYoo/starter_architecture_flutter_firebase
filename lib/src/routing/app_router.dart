@@ -1,19 +1,24 @@
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:starter_architecture_flutter_firebase/src/routing/app_startup.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/src/features/authentication/data/firebase_auth_repository.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/authentication/presentation/custom_profile_screen.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/authentication/presentation/custom_sign_in_screen.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/entries/presentation/entries_screen.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/entries/domain/entry.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/jobs/domain/job.dart';
+import 'package:starter_architecture_flutter_firebase/src/features/entries/presentation/entries_screen.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/entries/presentation/entry_screen/entry_screen.dart';
-import 'package:starter_architecture_flutter_firebase/src/features/jobs/presentation/job_entries_screen/job_entries_screen.dart';
-import 'package:go_router/go_router.dart';
+import 'package:starter_architecture_flutter_firebase/src/features/jobs/domain/job.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/jobs/presentation/edit_job_screen/edit_job_screen.dart';
+import 'package:starter_architecture_flutter_firebase/src/features/jobs/presentation/job_entries_screen/job_entries_screen.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/jobs/presentation/jobs_screen/jobs_screen.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/onboarding/data/onboarding_repository.dart';
 import 'package:starter_architecture_flutter_firebase/src/features/onboarding/presentation/onboarding_screen.dart';
+import 'package:starter_architecture_flutter_firebase/src/routing/app_startup.dart';
 import 'package:starter_architecture_flutter_firebase/src/routing/go_router_refresh_stream.dart';
 import 'package:starter_architecture_flutter_firebase/src/routing/not_found_screen.dart';
 import 'package:starter_architecture_flutter_firebase/src/routing/scaffold_with_nested_navigation.dart';
@@ -99,22 +104,22 @@ GoRouter goRouter(GoRouterRef ref) {
       GoRoute(
         path: '/onboarding',
         name: AppRoute.onboarding.name,
-        pageBuilder: (context, state) => const NoTransitionPage(
-          child: OnboardingScreen(),
-        ),
+        pageBuilder: (context, state) =>
+            const NoTransitionPage(child: OnboardingScreen()),
       ),
       GoRoute(
         path: '/signIn',
         name: AppRoute.signIn.name,
-        pageBuilder: (context, state) => const NoTransitionPage(
-          child: CustomSignInScreen(),
-        ),
+        pageBuilder: (context, state) =>
+            const NoTransitionPage(child: CustomSignInScreen()),
       ),
       // Stateful navigation based on:
       // https://github.com/flutter/packages/blob/main/packages/go_router/example/lib/stateful_shell_route.dart
       StatefulShellRoute.indexedStack(
         pageBuilder: (context, state, navigationShell) => NoTransitionPage(
-          child: ScaffoldWithNestedNavigation(navigationShell: navigationShell),
+          child: ScaffoldWithNestedNavigation(
+            navigationShell: navigationShell,
+          ),
         ),
         branches: [
           StatefulShellBranch(
@@ -123,9 +128,8 @@ GoRouter goRouter(GoRouterRef ref) {
               GoRoute(
                 path: '/jobs',
                 name: AppRoute.jobs.name,
-                pageBuilder: (context, state) => const NoTransitionPage(
-                  child: JobsScreen(),
-                ),
+                pageBuilder: (context, state) =>
+                    const NoTransitionPage(child: JobsScreen()),
                 routes: [
                   GoRoute(
                     path: 'add',
@@ -156,9 +160,7 @@ GoRouter goRouter(GoRouterRef ref) {
                           final jobId = state.pathParameters['id']!;
                           return MaterialPage(
                             fullscreenDialog: true,
-                            child: EntryScreen(
-                              jobId: jobId,
-                            ),
+                            child: EntryScreen(jobId: jobId),
                           );
                         },
                       ),
@@ -186,7 +188,10 @@ GoRouter goRouter(GoRouterRef ref) {
                           final job = state.extra as Job?;
                           return MaterialPage(
                             fullscreenDialog: true,
-                            child: EditJobScreen(jobId: jobId, job: job),
+                            child: EditJobScreen(
+                              jobId: jobId,
+                              job: job,
+                            ),
                           );
                         },
                       ),
@@ -202,9 +207,8 @@ GoRouter goRouter(GoRouterRef ref) {
               GoRoute(
                 path: '/entries',
                 name: AppRoute.entries.name,
-                pageBuilder: (context, state) => const NoTransitionPage(
-                  child: EntriesScreen(),
-                ),
+                pageBuilder: (context, state) =>
+                    const NoTransitionPage(child: EntriesScreen()),
               ),
             ],
           ),
@@ -214,17 +218,15 @@ GoRouter goRouter(GoRouterRef ref) {
               GoRoute(
                 path: '/account',
                 name: AppRoute.profile.name,
-                pageBuilder: (context, state) => const NoTransitionPage(
-                  child: CustomProfileScreen(),
-                ),
+                pageBuilder: (context, state) =>
+                    const NoTransitionPage(child: CustomProfileScreen()),
               ),
             ],
           ),
         ],
       ),
     ],
-    errorPageBuilder: (context, state) => const NoTransitionPage(
-      child: NotFoundScreen(),
-    ),
+    errorPageBuilder: (context, state) =>
+        const NoTransitionPage(child: NotFoundScreen()),
   );
 }

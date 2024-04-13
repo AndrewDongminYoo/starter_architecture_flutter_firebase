@@ -1,3 +1,4 @@
+// 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
 class Avatar extends StatelessWidget {
@@ -8,6 +9,7 @@ class Avatar extends StatelessWidget {
     this.borderColor,
     this.borderWidth,
   });
+
   final String? photoUrl;
   final double radius;
   final Color? borderColor;
@@ -30,10 +32,7 @@ class Avatar extends StatelessWidget {
     if (borderColor != null && borderWidth != null) {
       return BoxDecoration(
         shape: BoxShape.circle,
-        border: Border.all(
-          color: borderColor!,
-          width: borderWidth!,
-        ),
+        border: Border.all(color: borderColor!, width: borderWidth!),
       );
     }
     return null;

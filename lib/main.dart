@@ -1,12 +1,18 @@
-import 'package:firebase_core/firebase_core.dart';
+// ignore_for_file: depend_on_referenced_packages
+
+// 🐦 Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
+
+// 🌎 Project imports:
 import 'package:starter_architecture_flutter_firebase/firebase_options.dart';
 import 'package:starter_architecture_flutter_firebase/src/app.dart';
 import 'package:starter_architecture_flutter_firebase/src/localization/string_hardcoded.dart';
-// ignore:depend_on_referenced_packages
-import 'package:flutter_web_plugins/url_strategy.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,9 +24,7 @@ Future<void> main() async {
   // * Initialize Firebase
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   // * Entry point of the app
-  runApp(const ProviderScope(
-    child: MyApp(),
-  ));
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 void registerErrorHandlers() {
@@ -39,7 +43,7 @@ void registerErrorHandlers() {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: Text('An error occurred'.hardcoded),
+        title: Text('An error occurred'.tr()),
       ),
       body: Center(child: Text(details.toString())),
     );

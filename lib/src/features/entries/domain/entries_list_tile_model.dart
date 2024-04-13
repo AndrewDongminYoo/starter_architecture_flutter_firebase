@@ -5,6 +5,7 @@ class EntriesListTileModel {
     this.middleText,
     this.isHeader = false,
   });
+
   final String leadingText;
   final String trailingText;
   final String? middleText;
