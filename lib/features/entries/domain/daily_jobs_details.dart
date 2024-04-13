@@ -1,4 +1,5 @@
 // 🌎 Project imports:
+import 'entry.dart';
 import 'entry_job.dart';
 
 /// Temporary model class to store the time tracked and pay for a job

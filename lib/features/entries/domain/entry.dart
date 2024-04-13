@@ -1,52 +1,38 @@
 // 📦 Package imports:
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 // 🌎 Project imports:
 import '../../jobs/domain/job.dart';
 
+part 'entry.g.dart';
+part 'entry.freezed.dart';
+
 typedef EntryID = String;
 
-class Entry extends Equatable {
-  const Entry({
-    required this.id,
-    required this.jobId,
-    required this.start,
-    required this.end,
-    required this.comment,
-  });
-  factory Entry.fromMap(Map<dynamic, dynamic> value, EntryID id) {
-    final startMilliseconds = value['start'] as int;
-    final endMilliseconds = value['end'] as int;
-    return Entry(
-      id: id,
-      jobId: value['jobId'] as String,
-      start: DateTime.fromMillisecondsSinceEpoch(startMilliseconds),
-      end: DateTime.fromMillisecondsSinceEpoch(endMilliseconds),
-      comment: value['comment'] as String? ?? '',
-    );
+@freezed
+class Entry with _$Entry {
+  @JsonSerializable(explicitToJson: true)
+  const factory Entry({
+    required final EntryID id,
+    required final JobID jobId,
+    required final DateTime start,
+    required final DateTime end,
+    required final String comment,
+  }) = _Entry;
+
+  factory Entry.fromMap(Map<String, dynamic> data, EntryID id) {
+    final json = data..['id'] = id;
+    return Entry.fromJson(json);
   }
 
-  final EntryID id;
-  final JobID jobId;
-  final DateTime start;
-  final DateTime end;
-  final String comment;
+  factory Entry.fromJson(Map<String, dynamic> json) => _$EntryFromJson(json);
+}
 
-  @override
-  List<Object> get props => [id, jobId, start, end, comment];
-
-  @override
-  bool get stringify => true;
-
+extension EntryToMap on Entry {
   double get durationInHours =>
       end.difference(start).inMinutes.toDouble() / 60.0;
 
   Map<String, dynamic> toMap() {
-    return <String, dynamic>{
-      'jobId': jobId,
-      'start': start.millisecondsSinceEpoch,
-      'end': end.millisecondsSinceEpoch,
-      'comment': comment,
-    };
+    return toJson();
   }
 }

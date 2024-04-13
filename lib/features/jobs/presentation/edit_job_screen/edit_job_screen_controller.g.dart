@@ -7,7 +7,7 @@ part of 'edit_job_screen_controller.dart';
 // **************************************************************************
 
 String _$editJobScreenControllerHash() =>
-    r'e2985913f443860f6aa9d1b0aa462d4e5c25bed4';
+    r'3b87fb6f3e83be23d3f7c8b0b20b15fbbd017bac';
 
 /// See also [EditJobScreenController].
 @ProviderFor(EditJobScreenController)

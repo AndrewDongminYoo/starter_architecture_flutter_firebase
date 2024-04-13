@@ -22,7 +22,7 @@ final entriesServiceProvider = AutoDisposeProvider<EntriesService>.internal(
 
 typedef EntriesServiceRef = AutoDisposeProviderRef<EntriesService>;
 String _$entriesTileModelStreamHash() =>
-    r'69af265d2969a10a62e0b9e7b679ce336445b91c';
+    r'3aec730cd5598ed7cd66a04fd36354bfdc64ad61';
 
 /// See also [entriesTileModelStream].
 @ProviderFor(entriesTileModelStream)

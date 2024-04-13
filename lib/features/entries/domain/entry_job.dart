@@ -1,19 +1,16 @@
 // 📦 Package imports:
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 // 🌎 Project imports:
 import '../../jobs/domain/job.dart';
 import 'entry.dart';
 
-class EntryJob extends Equatable {
-  const EntryJob(this.entry, this.job);
+part 'entry_job.freezed.dart';
 
-  final Entry entry;
-  final Job job;
-
-  @override
-  List<Object?> get props => [entry, job];
-
-  @override
-  bool? get stringify => true;
+@freezed
+class EntryJob with _$EntryJob {
+  const factory EntryJob(
+    final Entry entry,
+    final Job job,
+  ) = _EntryJob;
 }
