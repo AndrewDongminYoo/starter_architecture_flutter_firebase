@@ -16,7 +16,6 @@ import '../domain/entry_job.dart';
 
 part 'entries_service.g.dart';
 
-// TODO: Clean up this code a bit more
 class EntriesService {
   EntriesService({
     required this.jobsRepository,
