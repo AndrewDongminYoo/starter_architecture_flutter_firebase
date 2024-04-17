@@ -14,10 +14,6 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-Entry _$EntryFromJson(Map<String, dynamic> json) {
-  return _Entry.fromJson(json);
-}
-
 /// @nodoc
 mixin _$Entry {
   String get id => throw _privateConstructorUsedError;
@@ -26,7 +22,6 @@ mixin _$Entry {
   DateTime get end => throw _privateConstructorUsedError;
   String get comment => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $EntryCopyWith<Entry> get copyWith => throw _privateConstructorUsedError;
 }
@@ -139,7 +134,6 @@ class __$$EntryImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(explicitToJson: true)
 class _$EntryImpl implements _Entry {
   const _$EntryImpl(
       {required this.id,
@@ -147,9 +141,6 @@ class _$EntryImpl implements _Entry {
       required this.start,
       required this.end,
       required this.comment});
-
-  factory _$EntryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EntryImplFromJson(json);
 
   @override
   final String id;
@@ -179,7 +170,6 @@ class _$EntryImpl implements _Entry {
             (identical(other.comment, comment) || other.comment == comment));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, jobId, start, end, comment);
 
@@ -188,13 +178,6 @@ class _$EntryImpl implements _Entry {
   @pragma('vm:prefer-inline')
   _$$EntryImplCopyWith<_$EntryImpl> get copyWith =>
       __$$EntryImplCopyWithImpl<_$EntryImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EntryImplToJson(
-      this,
-    );
-  }
 }
 
 abstract class _Entry implements Entry {
@@ -204,8 +187,6 @@ abstract class _Entry implements Entry {
       required final DateTime start,
       required final DateTime end,
       required final String comment}) = _$EntryImpl;
-
-  factory _Entry.fromJson(Map<String, dynamic> json) = _$EntryImpl.fromJson;
 
   @override
   String get id;
