@@ -21,7 +21,7 @@ class ResponsiveCenter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 최대 너비(엄격한 제약 조건)를 지정하려면 SizedBox와 함께 *제약되지 않은* 너비(느슨한 제약 조건)가 있으므로 Center를 사용합니다. 
+    // 최대 너비(엄격한 제약 조건)를 지정하려면 SizedBox와 함께 *제약되지 않은* 너비(느슨한 제약 조건)가 있으므로 Center를 사용합니다.
     return Center(
       // 자세한 내용은 이 스레드를 참조하세요:
       // https://twitter.com/biz84/status/1445400059894542337
