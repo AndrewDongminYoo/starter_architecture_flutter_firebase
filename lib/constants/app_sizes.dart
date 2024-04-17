@@ -1,7 +1,7 @@
 // 🐦 Flutter imports:
 import 'package:flutter/material.dart';
 
-/// Constant sizes to be used in the app (paddings, gaps, rounded corners etc.)
+/// 앱에서 사용할 고정된 사이즈(패딩, 간격, 둥근 모서리 등)
 class Sizes {
   static const p4 = 4.0;
   static const p8 = 8.0;
@@ -14,7 +14,7 @@ class Sizes {
   static const p64 = 64.0;
 }
 
-/// Constant gap widths
+/// 고정된 간격 너비
 const gapW4 = SizedBox(width: Sizes.p4);
 const gapW8 = SizedBox(width: Sizes.p8);
 const gapW12 = SizedBox(width: Sizes.p12);
@@ -25,7 +25,7 @@ const gapW32 = SizedBox(width: Sizes.p32);
 const gapW48 = SizedBox(width: Sizes.p48);
 const gapW64 = SizedBox(width: Sizes.p64);
 
-/// Constant gap heights
+/// 고정된 간격 높이
 const gapH4 = SizedBox(height: Sizes.p4);
 const gapH8 = SizedBox(height: Sizes.p8);
 const gapH12 = SizedBox(height: Sizes.p12);

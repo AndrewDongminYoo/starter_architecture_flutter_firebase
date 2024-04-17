@@ -47,7 +47,7 @@ enum AppRoute {
 
 @riverpod
 GoRouter goRouter(GoRouterRef ref) {
-  // rebuild GoRouter when app startup state changes
+  // 앱 시작 상태가 변경되면 GoRouter 재빌드
   final appStartupState = ref.watch(appStartupProvider);
   final authRepository = ref.watch(authRepositoryProvider);
   return GoRouter(
@@ -55,7 +55,7 @@ GoRouter goRouter(GoRouterRef ref) {
     navigatorKey: _rootNavigatorKey,
     debugLogDiagnostics: true,
     redirect: (context, state) {
-      // If the app is still initializing, show the /startup route
+      // 앱이 아직 초기화 중인 경우 /startup 경로를 표시합니다.
       if (appStartupState.isLoading || appStartupState.hasError) {
         return '/startup';
       }
@@ -64,7 +64,7 @@ GoRouter goRouter(GoRouterRef ref) {
       final didCompleteOnboarding = onboardingRepository.isOnboardingComplete();
       final path = state.uri.path;
       if (!didCompleteOnboarding) {
-        // Always check state.subloc before returning a non-null route
+        // 널이 아닌 경로를 반환하기 전에 항상 state.subloc을 확인합니다.
         // https://github.com/flutter/packages/blob/main/packages/go_router/example/lib/redirection.dart#L78
         if (path != '/onboarding') {
           return '/onboarding';
@@ -95,8 +95,8 @@ GoRouter goRouter(GoRouterRef ref) {
         path: '/startup',
         pageBuilder: (context, state) => NoTransitionPage(
           child: AppStartupWidget(
-            // * This is just a placeholder
-            // * The loaded route will be managed by GoRouter on state change
+            // * 이것은 단지 플레이스홀더일 뿐입니다.
+            // * 로드된 경로는 상태 변경 시 GoRouter에서 관리합니다.
             onLoaded: (_) => const SizedBox.shrink(),
           ),
         ),
@@ -113,7 +113,7 @@ GoRouter goRouter(GoRouterRef ref) {
         pageBuilder: (context, state) =>
             const NoTransitionPage(child: CustomSignInScreen()),
       ),
-      // Stateful navigation based on:
+      // 스테이트풀 내비게이션 출처:
       // https://github.com/flutter/packages/blob/main/packages/go_router/example/lib/stateful_shell_route.dart
       StatefulShellRoute.indexedStack(
         pageBuilder: (context, state, navigationShell) => NoTransitionPage(

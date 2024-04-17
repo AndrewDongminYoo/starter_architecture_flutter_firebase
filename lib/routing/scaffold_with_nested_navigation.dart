@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:go_router/go_router.dart';
 
-// Stateful navigation based on:
+// 스테이트풀 내비게이션 기반:
 // https://github.com/flutter/packages/blob/main/packages/go_router/example/lib/stateful_shell_route.dart
 class ScaffoldWithNestedNavigation extends StatelessWidget {
   const ScaffoldWithNestedNavigation({Key? key, required this.navigationShell})
@@ -15,10 +15,8 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
   void _goBranch(int index) {
     navigationShell.goBranch(
       index,
-      // A common pattern when using bottom navigation bars is to support
-      // navigating to the initial location when tapping the item that is
-      // already active. This example demonstrates how to support this behavior,
-      // using the initialLocation parameter of goBranch.
+      // 하단 탐색 바를 사용할 때 일반적인 패턴은 이미 활성화된 항목을 탭할 때 초기 위치로 이동하는 것을 지원하는 것입니다.
+      // 이 예제에서는 goBranch의 initialLocation 매개 변수를 사용하여 이 동작을 지원하는 방법을 보여줍니다.
       initialLocation: index == navigationShell.currentIndex,
     );
   }
@@ -124,7 +122,7 @@ class ScaffoldWithNavigationRail extends StatelessWidget {
             ],
           ),
           const VerticalDivider(thickness: 1, width: 1),
-          // This is the main content.
+          // 주요 콘텐츠입니다.
           Expanded(child: body),
         ],
       ),

@@ -2,7 +2,7 @@
 import 'entry.dart';
 import 'entry_job.dart';
 
-/// Temporary model class to store the time tracked and pay for a job
+/// 추적된 시간을 저장하고 작업 비용을 지불하는 임시 모델 클래스
 class JobDetails {
   JobDetails({
     required this.name,
@@ -15,7 +15,7 @@ class JobDetails {
   double pay;
 }
 
-/// Groups together all jobs/entries on a given day
+/// 특정 날짜의 모든 작업/항목을 그룹화합니다.
 class DailyJobsDetails {
   DailyJobsDetails({required this.date, required this.jobsDetails});
 
@@ -30,7 +30,7 @@ class DailyJobsDetails {
       .map((jobDuration) => jobDuration.durationInHours)
       .reduce((value, element) => value + element);
 
-  /// splits all entries into separate groups by date
+  /// 모든 항목을 날짜별로 별도의 그룹으로 나눕니다.
   static Map<DateTime, List<EntryJob>> _entriesByDate(List<EntryJob> entries) {
     final map = <DateTime, List<EntryJob>>{};
     for (final entryJob in entries) {
@@ -48,7 +48,7 @@ class DailyJobsDetails {
     return map;
   }
 
-  /// maps an unordered list of EntryJob into a list of DailyJobsDetails with date information
+  /// 정렬되지 않은 EntryJob 목록을 날짜 정보가 포함된 DailyJobsDetails 목록에 매핑합니다.
   static List<DailyJobsDetails> all(List<EntryJob> entries) {
     final byDate = _entriesByDate(entries);
     final list = <DailyJobsDetails>[];
@@ -61,7 +61,7 @@ class DailyJobsDetails {
     return list.toList();
   }
 
-  /// groups entries by job
+  /// 작업별로 항목 그룹화
   static List<JobDetails> _jobsDetails(List<EntryJob> entries) {
     final jobDuration = <String, JobDetails>{};
     for (final entryJob in entries) {

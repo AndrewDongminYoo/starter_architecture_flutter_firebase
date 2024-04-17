@@ -15,7 +15,7 @@ part 'job_entries_list_controller.g.dart';
 class JobsEntriesListController extends _$JobsEntriesListController {
   @override
   FutureOr<void> build() {
-    // ok to leave this empty if the return type is FutureOr<void>
+    // 반환 타입이 FutureOr<void>인 경우 이 값을 비워두어도 괜찮습니다.
   }
 
   Future<void> deleteEntry(EntryID entryId) async {

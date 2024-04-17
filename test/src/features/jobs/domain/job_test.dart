@@ -18,9 +18,9 @@ void main() {
     });
 
     test('missing name', () {
-      // * If the 'name' is missing, this error will be emitted:
-      // * _CastError:<type 'Null' is not a subtype of type 'String' in type cast>
-      // * We can detect it by expecting that the test throws a TypeError
+      // * 'name'이 누락되면 이 에러가 발생합니다:
+      // * _CastError:<타입 'Null'은 형 변환에서 'String' 타입의 하위 타입이 아닙니다>.
+      // * 테스트가 TypeError를 던질 것으로 예상하여 이를 감지할 수 있습니다.
       expect(
         () => Job.fromMap(
           const {

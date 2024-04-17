@@ -20,9 +20,8 @@ class EntriesScreen extends ConsumerWidget {
       appBar: AppBar(title: const Text(Strings.entries)),
       body: Consumer(
         builder: (context, ref, child) {
-          // * This data is combined from two streams, so it can't be returned
-          // * directly as a Query object from the repository.
-          // * As a result, we can't use FirestoreListView here.
+          // * 이 데이터는 두 개의 스트림에서 결합된 것이므로 리포지토리에서 쿼리 개체로 직접 반환할 수 없습니다.
+          // * 따라서 여기서는 FirestoreListView를 사용할 수 없습니다.
           final entriesTileModelStream =
               ref.watch(entriesTileModelStreamProvider);
           return ListItemsBuilder<EntriesListTileModel>(

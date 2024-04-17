@@ -13,7 +13,7 @@ part 'onboarding_controller.g.dart';
 class OnboardingController extends _$OnboardingController {
   @override
   FutureOr<void> build() {
-    // no op
+    // 반환 타입이 FutureOr<void>인 경우 이 값을 비워두어도 괜찮습니다.
   }
 
   Future<void> completeOnboarding() async {

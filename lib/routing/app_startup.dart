@@ -15,14 +15,14 @@ part 'app_startup.g.dart';
 @Riverpod(keepAlive: true)
 Future<void> appStartup(AppStartupRef ref) async {
   ref.onDispose(() {
-    // ensure dependent providers are disposed as well
+    // 의존성 제공자도 폐기되도록 합니다.
     ref.invalidate(onboardingRepositoryProvider);
   });
-  // await for all initialization code to be complete before returning
+  // 반환하기 전에 모든 초기화 코드가 완료될 때까지 기다립니다.
   await ref.watch(onboardingRepositoryProvider.future);
 }
 
-/// Widget class to manage asynchronous app initialization
+/// 비동기 앱 초기화를 관리하는 위젯 클래스
 class AppStartupWidget extends ConsumerWidget {
   const AppStartupWidget({super.key, required this.onLoaded});
 

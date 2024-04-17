@@ -25,7 +25,7 @@ class EntriesService {
   final JobsRepository jobsRepository;
   final EntriesRepository entriesRepository;
 
-  /// combine List<Job>, List<Entry> into List<EntryJob>
+  /// List<Job>, List<Entry>를 List<EntryJob>으로 결합합니다.
   Stream<List<EntryJob>> _allEntriesStream(UserID uid) =>
       CombineLatestStream.combine2(
         entriesRepository.watchEntries(uid: uid),
@@ -53,12 +53,12 @@ class EntriesService {
     }
     final allDailyJobsDetails = DailyJobsDetails.all(allEntries);
 
-    // total duration across all jobs
+    // 모든 작업의 총 소요 시간
     final totalDuration = allDailyJobsDetails
         .map((dateJobsDuration) => dateJobsDuration.duration)
         .reduce((value, element) => value + element);
 
-    // total pay across all jobs
+    // 모든 작업의 총 급여
     final totalPay = allDailyJobsDetails
         .map((dateJobsDuration) => dateJobsDuration.pay)
         .reduce((value, element) => value + element);

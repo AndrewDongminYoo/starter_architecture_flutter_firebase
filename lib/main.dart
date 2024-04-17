@@ -16,29 +16,29 @@ import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // turn off the # in the URLs on the web
+  // 웹에서 URL의 #를 제거합니다.
   usePathUrlStrategy();
-  // * Register error handlers. For more info, see:
+  // * 에러 핸들러를 등록합니다. 자세한 내용은 다음을 참조하세요:
   // * https://docs.flutter.dev/testing/errors
   registerErrorHandlers();
-  // * Initialize Firebase
+  // * Firebase 초기화
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  // * Entry point of the app
+  // * 앱의 진입 지점
   runApp(const ProviderScope(child: MyApp()));
 }
 
 void registerErrorHandlers() {
-  // * Show some error UI if any uncaught exception happens
+  // * 잡히지 않은 예외가 발생할 경우 오류 UI 표시
   FlutterError.onError = (FlutterErrorDetails details) {
     FlutterError.presentError(details);
     debugPrint(details.toString());
   };
-  // * Handle errors from the underlying platform/OS
+  // * 기본 플랫폼/OS에서 발생하는 오류 처리
   PlatformDispatcher.instance.onError = (Object error, StackTrace stack) {
     debugPrint(error.toString());
     return true;
   };
-  // * Show some error UI when any widget in the app fails to build
+  // * 앱의 위젯이 빌드에 실패하면 오류 UI 표시
   ErrorWidget.builder = (FlutterErrorDetails details) {
     return Scaffold(
       appBar: AppBar(

@@ -11,7 +11,7 @@ import '../features/auth/data/firebase_auth_repository.dart';
 import '../routing/app_router.dart';
 import 'primary_button.dart';
 
-/// Placeholder widget showing a message and CTA to go back to the home screen.
+/// 홈 화면으로 돌아가기 위한 메시지와 CTA를 표시하는 플레이스홀더 위젯입니다.
 class EmptyPlaceholderWidget extends ConsumerWidget {
   const EmptyPlaceholderWidget({super.key, required this.message});
 

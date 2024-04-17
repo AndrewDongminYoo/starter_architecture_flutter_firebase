@@ -16,7 +16,7 @@ part 'entry_screen_controller.g.dart';
 class EntryScreenController extends _$EntryScreenController {
   @override
   FutureOr<void> build() {
-    // ok to leave this empty if the return type is FutureOr<void>
+    // 반환 유형이 FutureOr<void>인 경우 이 값을 비워두어도 괜찮습니다.
   }
 
   Future<bool> submit({

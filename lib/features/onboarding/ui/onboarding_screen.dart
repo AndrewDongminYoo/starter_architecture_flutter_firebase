@@ -51,7 +51,7 @@ class OnboardingScreen extends ConsumerWidget {
                           .read(onboardingControllerProvider.notifier)
                           .completeOnboarding();
                       if (context.mounted) {
-                        // go to sign in page after completing onboarding
+                        // 온보딩 완료 후 로그인 페이지로 이동합니다.
                         context.goNamed(AppRoute.signIn.name);
                       }
                     },

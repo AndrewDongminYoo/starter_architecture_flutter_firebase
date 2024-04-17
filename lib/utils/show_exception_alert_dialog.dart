@@ -22,9 +22,9 @@ String _message(dynamic exception) {
   return exception.toString();
 }
 
-// NOTE: The full list of FirebaseAuth errors is stored here:
+// NOTE: FirebaseAuth 오류의 전체 목록은 여기에 저장되어 있습니다:
 // https://github.com/firebase/firebase-ios-sdk/blob/2e77efd786e4895d50c3788371ec15980c729053/Firebase/Auth/Source/FIRAuthErrorUtils.m
-// These are just the most relevant for email & password sign in:
+// 이메일 및 비밀번호 로그인과 가장 관련성이 높은 기능입니다:
 Map<String, String> errors = {
   'ERROR_WEAK_PASSWORD': 'The password must be 6 characters long or more.',
   'ERROR_INVALID_CREDENTIAL': 'The supplied auth credential is malformed or has expired.',

@@ -16,7 +16,7 @@ part 'edit_job_screen_controller.g.dart';
 class EditJobScreenController extends _$EditJobScreenController {
   @override
   FutureOr<void> build() {
-    //
+    // 반환 타입이 FutureOr<void>인 경우 이 값을 비워두어도 괜찮습니다.
   }
 
   Future<bool> submit({
@@ -29,14 +29,14 @@ class EditJobScreenController extends _$EditJobScreenController {
     if (currentUser == null) {
       throw AssertionError("User can't be null");
     }
-    // set loading state
+    // 로딩 상태 설정
     state = const AsyncLoading().copyWithPrevious(state);
-    // check if name is already in use
+    // 이미 사용 중인 이름인지 확인
     final repository = ref.read(jobsRepositoryProvider);
     final jobs = await repository.fetchJobs(uid: currentUser.uid);
     final allLowerCaseNames =
         jobs.map((job) => job.name.toLowerCase()).toList();
-    // it's ok to use the same name as the old job
+    // 이전 작업과 동일한 이름을 사용해도 괜찮습니다.
     if (oldJob != null) {
       allLowerCaseNames.remove(oldJob.name.toLowerCase());
     }
