@@ -3,7 +3,15 @@
   "ignorePaths": [],
   "dictionaryDefinitions": [],
   "dictionaries": [],
-  "words": ["Intelli", "perspectivev", "sconsign", "xcconfig", "xcuserdata"],
+  "words": [
+    "dgph",
+    "Intelli",
+    "nodoc",
+    "perspectivev",
+    "sconsign",
+    "xcconfig",
+    "xcuserdata"
+  ],
   "ignoreWords": [],
   "import": []
 }

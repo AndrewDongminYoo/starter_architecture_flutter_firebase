@@ -14,10 +14,14 @@ Future<void> showExceptionAlertDialog({
 
 String _message(dynamic exception) {
   if (exception is FirebaseException) {
-    return exception.message ?? exception.toString();
+    return errors[exception.message] ??
+        exception.message ??
+        exception.toString();
   }
   if (exception is PlatformException) {
-    return exception.message ?? exception.toString();
+    return errors[exception.message] ??
+        exception.message ??
+        exception.toString();
   }
   return exception.toString();
 }
@@ -35,7 +39,6 @@ Map<String, String> errors = {
   'ERROR_TOO_MANY_REQUESTS': '비정상적인 활동으로 인해 이 장치의 모든 요청을 차단했습니다.',
   'ERROR_OPERATION_NOT_ALLOWED':
       '지정된 로그인 공급자가 이 Firebase 프로젝트에 대해 비활성화되어 있습니다.',
-
   'ERROR_ACCOUNT_EXISTS_WITH_DIFFERENT_CREDENTIAL':
       '이메일 주소는 같지만 로그인 자격 증명이 다른 계정이 이미 존재합니다.',
   'ERROR_APP_NOT_AUTHORIZED': '이 앱은 제공된 API 키로 Firebase 인증을 사용할 수 있는 권한이 없습니다.',
