@@ -1,102 +1,102 @@
-# Time Tracking app with Flutter & Firebase
+# Flutter & Firebase를 이용한 시간 추적 앱
 
-A time tracking application built with Flutter & Firebase: 
+Flutter & Firebase를 사용하여 구축된 시간 추적 애플리케이션:
 
 ![](/.github/images/time-tracker-screenshots.png)
 
-This is intended as a **reference app** based on my [Riverpod Architecture](https://codewithandrea.com/articles/flutter-app-architecture-riverpod-introduction/).
+이는 제가 개발한 [Riverpod 아키텍처](https://codewithandrea.com/articles/flutter-app-architecture-riverpod-introduction/)를 기반으로 한 **참조 앱**입니다.
 
-> **Note**: this project used to be called "Started Architecture for Flutter & Firebase" (based on this [old article](https://codewithandrea.com/videos/starter-architecture-flutter-firebase/)). As of January 2023, it follows my updated [Riverpod Architecture](https://codewithandrea.com/articles/flutter-app-architecture-riverpod-introduction/), using the latest packages.
+> **참고**: 이 프로젝트는 이전에 "Flutter & Firebase를 위한 시작 아키텍처"라고 불렸으며 (이 [옛 아티클](https://codewithandrea.com/videos/starter-architecture-flutter-firebase/)에 기반), 2023년 1월 현재, 제가 업데이트한 [Riverpod 아키텍처](https://codewithandrea.com/articles/flutter-app-architecture-riverpod-introduction/)를 따르고 있습니다.
 
-## Flutter web preview
+## Flutter 웹 미리보기
 
-A Flutter web preview of the app is available here:
+앱의 Flutter 웹 미리보기는 여기에서 확인할 수 있습니다:
 
-- [Time Tracker | Flutter web demo](https://starter-architecture-flutter.web.app)
+- [Time Tracker | Flutter 웹 데모](https://starter-architecture-flutter.web.app)
 
-## Features
+## 기능들
 
-- **Simple onboarding page**
-- **Full authentication flow** (using email & password)
-- **Jobs**: users can view, create, edit, and delete their own private jobs (each job has a name and hourly rate)
-- **Entries**: for each job, user can view, create, edit, and delete the corresponding entries (an entry is a task with a start and end time, with an optional comment)
-- **A report page** that shows a daily breakdown of all jobs, hours worked and pay, along with the totals.
+- **간단한 온보딩 페이지**
+- **전체 인증 흐름** (이메일 & 비밀번호 사용)
+- **작업**: 사용자는 자신의 개인 작업을 보고, 생성하고, 편집하고, 삭제할 수 있습니다 (각 작업은 이름과 시간당 요금을 가짐)
+- **엔트리**: 각 작업에 대해 사용자는 해당 엔트리를 보고, 생성하고, 편집하고, 삭제할 수 있습니다 (엔트리는 시작 및 종료 시간을 가진 작업이며, 선택적으로 댓글을 달 수 있음)
+- **보고서 페이지**는 모든 작업의 일일 분석, 근무 시간 및 급여를 보여주며 총액을 함께 표시합니다.
 
-All the data is persisted with Firestore and is kept in sync across multiple devices.
+모든 데이터는 Firestore에 영구 저장되며 여러 기기에서 동기화됩니다.
 
-## Roadmap
+## 로드맵
 
-- [ ] Add missing tests
-- [x] Stateful Nested Navigation (available since GoRouter 7.1)
-- [ ] Use controllers / notifiers consistently across the app (some code still needs to be updated)
-- [ ] Add localization
-- [ ] Use the new Firebase UI packages where useful
-- [ ] Responsive UI
+- [ ] 누락된 테스트 추가
+- [x] 상태 유지 중첩 탐색 (GoRouter 7.1부터 사용 가능)
+- [ ] 앱 전체에서 일관되게 컨트롤러 / 노티파이어 사용 (일부 코드는 아직 업데이트 필요)
+- [ ] 지역화 추가
+- [ ] 새로운 Firebase UI 패키지 사용
+- [ ] 반응형 UI
 
-> This is a tentative roadmap. There is no ETA for any of the points above. This is a low priority project and I don't have much time to maintain it.
+> 이 로드맵은 잠정적입니다. 위의 사항들에 대한 예정된 완료 시기는 없습니다. 이 프로젝트는 우선 순위가 낮으며 관리할 시간이 많지 않습니다.
 
-## Relevant Articles
+## 관련 아티클
 
-The app is based on my Flutter Riverpod architecture, which is explained in detail here:
+앱은 제가 설명한 Flutter Riverpod 아키텍처를 기반으로 합니다:
 
-- [Flutter App Architecture with Riverpod: An Introduction](https://codewithandrea.com/articles/flutter-app-architecture-riverpod-introduction/)
-- [Flutter Project Structure: Feature-first or Layer-first?](https://codewithandrea.com/articles/flutter-project-structure/)
-- [Flutter App Architecture: The Repository Pattern](https://codewithandrea.com/articles/flutter-repository-pattern/)
+- [Flutter 앱 아키텍처와 Riverpod: 소개](https://codewithandrea.com/articles/flutter-app-architecture-riverpod-introduction/)
+- [Flutter 프로젝트 구조: 기능별 또는 레이어별?](https://codewithandrea.com/articles/flutter-project-structure/)
+- [Flutter 앱 아키텍처: 리포지토리 패턴](https://codewithandrea.com/articles/flutter-repository-pattern/)
 
-More more info on Riverpod, read this:
+Riverpod에 대한 자세한 정보는 다음을 읽어보세요:
 
-- [Flutter Riverpod 2.0: The Ultimate Guide](https://codewithandrea.com/articles/flutter-state-management-riverpod/)
+- [Flutter Riverpod 2.0: 최고의 가이드](https://codewithandrea.com/articles/flutter-state-management-riverpod/)
 
-## Packages in use
+## 사용 중인 패키지
 
-These are the main packages used in the app:
+앱에서 사용 중인 주요 패키지는 다음과 같습니다:
 
-- [Flutter Riverpod](https://pub.dev/packages/flutter_riverpod) for data caching, dependency injection, and more
-- [Riverpod Generator](https://pub.dev/packages/riverpod_generator) and [Riverpod Lint](https://pub.dev/packages/riverpod_lint) for the latest Riverpod APIs
-- [GoRouter](https://pub.dev/packages/go_router) for navigation
-- [Firebase Auth](https://pub.dev/packages/firebase_auth) and [Firebase UI Auth](https://pub.dev/packages/firebase_ui_auth) for authentication
-- [Cloud Firestore](https://pub.dev/packages/cloud_firestore) as a realtime database
-- [Firebase UI for Firestore](https://pub.dev/packages/firebase_ui_firestore) for the `FirestoreListView` widget with pagination support
-- [RxDart](https://pub.dev/packages/rxdart) for combining multiple Firestore collections as needed
-- [Intl](https://pub.dev/packages/intl) for currency, date, time formatting
-- [Mocktail](https://pub.dev/packages/mocktail) for testing
-- [Equatable](https://pub.dev/packages/equatable) to reduce boilerplate code in model classes
+- [Flutter Riverpod](https://pub.dev/packages/flutter_riverpod) 데이터 캐싱, 종속성 주입 등을 위해
+- [Riverpod Generator](https://pub.dev/packages/riverpod_generator) 및 [Riverpod Lint](https://pub.dev/packages/riverpod_lint) 최신 Riverpod API를 위해
+- [GoRouter](https://pub.dev/packages/go_router) 네비게이션을 위해
+- [Firebase Auth](https://pub.dev/packages/firebase_auth) 및 [Firebase UI Auth](https://pub.dev/packages/firebase_ui_auth) 인증을 위해
+- [Cloud Firestore](https://pub.dev/packages/cloud_firestore) 실시간 데이터베이스로서
+- [Firebase UI for Firestore](https://pub.dev/packages/firebase_ui_firestore) 페이지네이션 지원이 있는 `FirestoreListView` 위젯을 위해
+- [RxDart](https://pub.dev/packages/rxdart) 필요에 따라 여러 Firestore 컬렉션을 결합하기 위해
+- [Intl](https://pub.dev/packages/intl) 통화, 날짜, 시간 형식 지정을 위해
+- [Mocktail](https://pub.dev/packages/mocktail) 테스팅을 위해
+- [Freezed](https://pub.dev/packages/freezed) 모델 클래스에서 보일러플레이트 코드를 줄이기 위해
 
-See the [pubspec.yaml](pubspec.yaml) file for the complete list.
+전체 목록은 [pubspec.yaml](pubspec.yaml) 파일을 확인하세요.
 
-## Running the project with Firebase
+## Firebase와 함께 프로젝트 실행
 
-To use this project with Firebase, follow these steps:
+이 프로젝트를 Firebase와 함께 사용하려면 다음 단계를 따르세요:
 
-- Create a new project with the Firebase console
-- Enable Firebase Authentication, along with the Email/Password Authentication Sign-in provider in the Firebase Console (Authentication > Sign-in method > Email/Password > Edit > Enable > Save)
-- Enable Cloud Firestore
+- Firebase 콘솔에서 새 프로젝트를 만듭니다
+- Firebase 콘솔에서 Firebase 인증을 활성화하고 이메일/비밀번호 인증 로그인 제공자를 활성화합니다 (Authentication > 로그인 방법 > 이메일/비밀번호 > 편집 > 활성화 > 저장)
+- Cloud Firestore를 활성화합니다
 
-Then, follow one of the two approaches below. 👇
+그런 다음 아래 두 가지 접근 방식 중 하나를 따르세요. 👇
 
-### 1. Using the CLI
+### 1. CLI 사용하기
 
-Make sure you have the Firebase CLI and [FlutterFire CLI](https://pub.dev/packages/flutterfire_cli) installed.
+Firebase CLI와 [FlutterFire CLI](https://pub.dev/packages/flutterfire_cli)가 설치되어 있는지 확인하세요.
 
-Then run this on the terminal from the root of this project:
+그런 다음 이 프로젝트의 루트에서 터미널에서 다음을 실행하세요:
 
-- Run `firebase login` so you have access to the Firebase project you have created
-- Run `flutterfire configure` and follow all the steps
+- `firebase login`을 실행하여 만든 Firebase 프로젝트에 접근하세요
+- `flutterfire configure`를 실행하고 모든 단계를 따르세요
 
-For more info, follow this guide:
+더 많은 정보를 위해서는 이 가이드를 따르세요:
 
-- [How to add Firebase to a Flutter app with FlutterFire CLI](https://codewithandrea.com/articles/flutter-firebase-flutterfire-cli/)
+- [FlutterFire CLI로 Flutter 앱에 Firebase 추가하기](https://codewithandrea.com/articles/flutter-firebase-flutterfire-cli/)
 
-### 2. Manual way (not recommended)
+### 2. 수동 방식 (추천하지 않음)
 
-If you don't want to use FlutterFire CLI, follow these steps instead:
+FlutterFire CLI를 사용하고 싶지 않다면 대신 이 단계를 따르세요:
 
-- Register separate iOS, Android, and web apps in the Firebase project settings.
-- On Android, use `com.example.starter_architecture_flutter_firebase` as the package name.
-- then, [download and copy](https://firebase.google.com/docs/flutter/setup#configure_an_android_app) `google-services.json` into `android/app`.
-- On iOS, use `com.example.starterArchitectureFlutterFirebase` as the bundle ID.
-- then, [download and copy](https://firebase.google.com/docs/flutter/setup#configure_an_ios_app) `GoogleService-Info.plist` into `iOS/Runner`, and add it to the Runner target in Xcode.
+- Firebase 프로젝트 설정에서 별도의 iOS, Android 및 웹 앱을 등록하세요.
+- Android에서는 패키지 이름으로 `com.example.starter_architecture_flutter_firebase`를 사용하세요.
+- 그런 다음, `google-services.json`을 [다운로드하고 복사](https://firebase.google.com/docs/flutter/setup#configure_an_android_app)하여 `android/app`에 넣으세요.
+- iOS에서는 번들 ID로 `com.example.starterArchitectureFlutterFirebase`를 사용하세요.
+- 그런 다음, `GoogleService-Info.plist`를 [다운로드하고 복사](https://firebase.google.com/docs/flutter/setup#configure_an_ios_app)하여 `iOS/Runner`에 넣고 Xcode의 Runner 타겟에 추가하세요.
 
-That's it. Have fun!
+즐거운 시간 되세요!
 
-## [License: MIT](LICENSE.md)
+## [라이선스: MIT](LICENSE.md)
