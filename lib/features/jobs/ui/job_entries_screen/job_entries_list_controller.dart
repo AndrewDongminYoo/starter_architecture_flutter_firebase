@@ -5,9 +5,9 @@ import 'dart:async';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 // 🌎 Project imports:
-import '../../../auth/data/firebase_auth_repository.dart';
-import '../../../entries/data/entries_repository.dart';
-import '../../../entries/domain/entry.dart';
+import '../../../auth/data/firebase_auth_repository.dart' show authRepositoryProvider;
+import '../../../entries/data/entries_repository.dart' show entriesRepositoryProvider;
+import '../../../entries/domain/entry.dart' show EntryID;
 
 part 'job_entries_list_controller.g.dart';
 

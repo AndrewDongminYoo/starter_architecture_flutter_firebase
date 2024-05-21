@@ -5,10 +5,10 @@ import 'dart:async';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 // 🌎 Project imports:
-import '../../../auth/data/firebase_auth_repository.dart';
-import '../../data/jobs_repository.dart';
-import '../../domain/job.dart';
-import 'job_submit_exception.dart';
+import '../../../auth/data/firebase_auth_repository.dart' show authRepositoryProvider;
+import '../../data/jobs_repository.dart' show jobsRepositoryProvider;
+import '../../domain/job.dart' show Job, JobID;
+import 'job_submit_exception.dart' show JobSubmitException;
 
 part 'edit_job_screen_controller.g.dart';
 
