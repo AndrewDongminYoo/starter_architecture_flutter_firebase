@@ -6,7 +6,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // 🌎 Project imports:
-import 'alert_dialogs.dart';
+import 'alert_dialogs.dart' show showExceptionAlertDialog;
 
 extension AsyncValueUI on AsyncValue {
   void showAlertDialogOnError(BuildContext context) {

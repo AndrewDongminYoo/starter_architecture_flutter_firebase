@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '../../../../constants/app_sizes.dart';
-import '../../../../utils/format.dart';
-import '../../../entries/domain/entry.dart';
-import '../../domain/job.dart';
+import '../../../../constants/app_sizes.dart' show Sizes, gapW16;
+import '../../../../utils/format.dart' show Format;
+import '../../../entries/domain/entry.dart' show Entry, EntryToMap;
+import '../../domain/job.dart' show Job;
 
 class EntryListItem extends StatelessWidget {
   const EntryListItem({

@@ -2,8 +2,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 // 🌎 Project imports:
-import '../../jobs/domain/job.dart';
-import 'entry.dart';
+import '../../jobs/domain/job.dart' show $JobCopyWith, Job;
+import 'entry.dart' show $EntryCopyWith, Entry;
 
 part 'entry_job.freezed.dart';
 

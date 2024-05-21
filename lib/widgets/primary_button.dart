@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '../constants/app_sizes.dart';
+import '../constants/app_sizes.dart' show Sizes;
 
 /// Primary button based on [ElevatedButton].
 /// Useful for CTAs in the app.

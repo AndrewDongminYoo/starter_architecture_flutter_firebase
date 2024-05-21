@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '../constants/app_sizes.dart';
+import '../constants/app_sizes.dart' show Sizes;
 
 /// 고정 높이의 사용자 지정 텍스트 버튼
 class CustomTextButton extends StatelessWidget {

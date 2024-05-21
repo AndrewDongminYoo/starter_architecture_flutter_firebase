@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // 🌎 Project imports:
-import '../../../constants/app_sizes.dart';
-import '../../../constants/strings.dart';
-import '../../../widgets/list_items_builder.dart';
-import '../domain/entries_list_tile_model.dart';
-import '../services/entries_service.dart';
+import '../../../constants/app_sizes.dart' show Sizes;
+import '../../../constants/strings.dart' show Strings;
+import '../../../widgets/list_items_builder.dart' show ListItemsBuilder;
+import '../domain/entries_list_tile_model.dart' show EntriesListTileModel;
+import '../services/entries_service.dart' show entriesTileModelStreamProvider;
 
 class EntriesScreen extends ConsumerWidget {
   const EntriesScreen({super.key});

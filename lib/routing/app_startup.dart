@@ -6,8 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 // 🌎 Project imports:
-import '../constants/app_sizes.dart';
-import '../features/onboarding/data/onboarding_repository.dart';
+import '../constants/app_sizes.dart' show gapH16;
+import '../features/onboarding/data/onboarding_repository.dart' show onboardingRepositoryProvider;
 
 part 'app_startup.g.dart';
 

@@ -3,10 +3,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 // 🌎 Project imports:
-import '../../auth/data/firebase_auth_repository.dart';
-import '../../auth/domain/app_user.dart';
-import '../../jobs/domain/job.dart';
-import '../domain/entry.dart';
+import '../../auth/data/firebase_auth_repository.dart' show firebaseAuthProvider;
+import '../../auth/domain/app_user.dart' show UserID;
+import '../../jobs/domain/job.dart' show JobID;
+import '../domain/entry.dart' show Entry, EntryID, EntryToMap;
 
 part 'entries_repository.g.dart';
 

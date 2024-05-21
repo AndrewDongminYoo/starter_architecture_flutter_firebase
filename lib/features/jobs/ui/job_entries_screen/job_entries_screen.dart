@@ -6,11 +6,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
-import '../../../../routing/app_router.dart';
-import '../../../../widgets/async_value_widget.dart';
-import '../../data/jobs_repository.dart';
-import '../../domain/job.dart';
-import 'job_entries_list.dart';
+import '../../../../routing/app_router.dart' show AppRoute;
+import '../../../../widgets/async_value_widget.dart' show ScaffoldAsyncValueWidget;
+import '../../data/jobs_repository.dart' show jobStreamProvider;
+import '../../domain/job.dart' show Job, JobID;
+import 'job_entries_list.dart' show JobEntriesList;
 
 class JobEntriesScreen extends ConsumerWidget {
   const JobEntriesScreen({super.key, required this.jobId});

@@ -7,12 +7,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
-import '../../../../constants/strings.dart';
-import '../../../../routing/app_router.dart';
-import '../../../../utils/async_value_ui.dart';
-import '../../data/jobs_repository.dart';
-import '../../domain/job.dart';
-import 'jobs_screen_controller.dart';
+import '../../../../constants/strings.dart' show Strings;
+import '../../../../routing/app_router.dart' show AppRoute;
+import '../../../../utils/async_value_ui.dart' show AsyncValueUI;
+import '../../data/jobs_repository.dart' show jobsQueryProvider;
+import '../../domain/job.dart' show Job;
+import 'jobs_screen_controller.dart' show jobsScreenControllerProvider;
 
 class JobsScreen extends StatelessWidget {
   const JobsScreen({super.key});

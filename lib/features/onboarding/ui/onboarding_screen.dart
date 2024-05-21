@@ -8,11 +8,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
-import '../../../constants/app_sizes.dart';
-import '../../../routing/app_router.dart';
-import '../../../widgets/primary_button.dart';
-import '../../../widgets/responsive_center.dart';
-import 'onboarding_controller.dart';
+import '../../../constants/app_sizes.dart' show gapH16;
+import '../../../routing/app_router.dart' show AppRoute;
+import '../../../widgets/primary_button.dart' show PrimaryButton;
+import '../../../widgets/responsive_center.dart' show ResponsiveCenter;
+import 'onboarding_controller.dart' show onboardingControllerProvider;
 
 class OnboardingScreen extends ConsumerWidget {
   const OnboardingScreen({super.key});

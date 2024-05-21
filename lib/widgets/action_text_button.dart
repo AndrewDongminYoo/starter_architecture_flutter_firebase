@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '../constants/app_sizes.dart';
+import '../constants/app_sizes.dart' show Sizes;
 
 /// [AppBar] 액션으로 사용할 텍스트 버튼
 class ActionTextButton extends StatelessWidget {

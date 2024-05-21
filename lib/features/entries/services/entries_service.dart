@@ -3,16 +3,16 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:rxdart/rxdart.dart';
 
 // 🌎 Project imports:
-import '../../../utils/format.dart';
-import '../../auth/data/firebase_auth_repository.dart';
-import '../../auth/domain/app_user.dart';
-import '../../jobs/data/jobs_repository.dart';
-import '../../jobs/domain/job.dart';
-import '../data/entries_repository.dart';
-import '../domain/daily_jobs_details.dart';
-import '../domain/entries_list_tile_model.dart';
-import '../domain/entry.dart';
-import '../domain/entry_job.dart';
+import '../../../utils/format.dart' show Format;
+import '../../auth/data/firebase_auth_repository.dart' show firebaseAuthProvider;
+import '../../auth/domain/app_user.dart' show UserID;
+import '../../jobs/data/jobs_repository.dart' show JobsRepository, jobsRepositoryProvider;
+import '../../jobs/domain/job.dart' show Job;
+import '../data/entries_repository.dart' show EntriesRepository, entriesRepositoryProvider;
+import '../domain/daily_jobs_details.dart' show DailyJobsDetails, JobDetails;
+import '../domain/entries_list_tile_model.dart' show EntriesListTileModel;
+import '../domain/entry.dart' show Entry;
+import '../domain/entry_job.dart' show EntryJob;
 
 part 'entries_service.g.dart';
 

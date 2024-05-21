@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // 🌎 Project imports:
-import 'empty_content.dart';
+import 'empty_content.dart' show EmptyContent;
 
 typedef ItemWidgetBuilder<T> = Widget Function(BuildContext context, T item);
 

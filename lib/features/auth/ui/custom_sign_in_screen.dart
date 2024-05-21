@@ -6,9 +6,9 @@ import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // 🌎 Project imports:
-import '../../../constants/app_sizes.dart';
-import '../data/firebase_auth_repository.dart';
-import 'auth_providers.dart';
+import '../../../constants/app_sizes.dart' show Sizes, gapH8;
+import '../data/firebase_auth_repository.dart' show firebaseAuthProvider;
+import 'auth_providers.dart' show authProvidersProvider;
 
 class CustomSignInScreen extends ConsumerWidget {
   const CustomSignInScreen({super.key});

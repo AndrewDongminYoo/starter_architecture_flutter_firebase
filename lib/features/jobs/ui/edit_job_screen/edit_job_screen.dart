@@ -9,11 +9,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
-import '../../../../constants/breakpoints.dart';
-import '../../../../utils/async_value_ui.dart';
-import '../../../../widgets/responsive_center.dart';
-import '../../domain/job.dart';
-import 'edit_job_screen_controller.dart';
+import '../../../../constants/breakpoints.dart' show Breakpoint;
+import '../../../../utils/async_value_ui.dart' show AsyncValueUI;
+import '../../../../widgets/responsive_center.dart' show ResponsiveCenter;
+import '../../domain/job.dart' show Job, JobID;
+import 'edit_job_screen_controller.dart' show editJobScreenControllerProvider;
 
 class EditJobScreen extends ConsumerStatefulWidget {
   const EditJobScreen({super.key, this.jobId, this.job});

@@ -6,10 +6,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
-import '../constants/app_sizes.dart';
-import '../features/auth/data/firebase_auth_repository.dart';
-import '../routing/app_router.dart';
-import 'primary_button.dart';
+import '../constants/app_sizes.dart' show Sizes, gapH32;
+import '../features/auth/data/firebase_auth_repository.dart' show authRepositoryProvider;
+import '../routing/app_router.dart' show AppRoute;
+import 'primary_button.dart' show PrimaryButton;
 
 /// 홈 화면으로 돌아가기 위한 메시지와 CTA를 표시하는 플레이스홀더 위젯입니다.
 class EmptyPlaceholderWidget extends ConsumerWidget {

@@ -2,7 +2,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 // 🌎 Project imports:
-import '../../jobs/domain/job.dart';
+import '../../jobs/domain/job.dart' show JobID;
 
 part 'entry.freezed.dart';
 

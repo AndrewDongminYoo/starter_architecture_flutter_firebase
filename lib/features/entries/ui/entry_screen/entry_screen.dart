@@ -9,15 +9,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 // 🌎 Project imports:
-import '../../../../constants/app_sizes.dart';
-import '../../../../constants/breakpoints.dart';
-import '../../../../utils/async_value_ui.dart';
-import '../../../../utils/format.dart';
-import '../../../../widgets/date_time_picker.dart';
-import '../../../../widgets/responsive_center.dart';
-import '../../../jobs/domain/job.dart';
-import '../../domain/entry.dart';
-import 'entry_screen_controller.dart';
+import '../../../../constants/app_sizes.dart' show Sizes, gapH8;
+import '../../../../constants/breakpoints.dart' show Breakpoint;
+import '../../../../utils/async_value_ui.dart' show AsyncValueUI;
+import '../../../../utils/format.dart' show Format;
+import '../../../../widgets/date_time_picker.dart' show DateTimePicker;
+import '../../../../widgets/responsive_center.dart' show ResponsiveCenter;
+import '../../../jobs/domain/job.dart' show JobID;
+import '../../domain/entry.dart' show Entry, EntryID;
+import 'entry_screen_controller.dart' show entryScreenControllerProvider;
 
 class EntryScreen extends ConsumerStatefulWidget {
   const EntryScreen({super.key, required this.jobId, this.entryId, this.entry});

@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // 🌎 Project imports:
-import '../constants/breakpoints.dart';
+import '../constants/breakpoints.dart' show Breakpoint;
 
 /// 최대 콘텐츠 너비 제약이 있는 자식을 표시하기 위한 재사용 가능한 위젯입니다.
 /// 사용 가능한 너비가 최대 너비보다 크면 자식이 가운데에 배치됩니다.

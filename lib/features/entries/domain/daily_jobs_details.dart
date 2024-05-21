@@ -1,6 +1,6 @@
 // 🌎 Project imports:
-import 'entry.dart';
-import 'entry_job.dart';
+import 'entry.dart' show EntryToMap;
+import 'entry_job.dart' show EntryJob;
 
 /// 추적된 시간을 저장하고 작업 비용을 지불하는 임시 모델 클래스
 class JobDetails {

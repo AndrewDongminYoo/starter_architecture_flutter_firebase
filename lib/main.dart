@@ -11,8 +11,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 
 // 🌎 Project imports:
-import 'app.dart';
-import 'firebase_options.dart';
+import 'app.dart' show MyApp;
+import 'firebase_options.dart' show DefaultFirebaseOptions;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

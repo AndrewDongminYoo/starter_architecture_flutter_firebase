@@ -6,11 +6,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 // 🌎 Project imports:
-import '../../auth/data/firebase_auth_repository.dart';
-import '../../auth/domain/app_user.dart';
-import '../../entries/data/entries_repository.dart';
-import '../../entries/domain/entry.dart';
-import '../domain/job.dart';
+import '../../auth/data/firebase_auth_repository.dart' show firebaseAuthProvider;
+import '../../auth/domain/app_user.dart' show UserID;
+import '../../entries/data/entries_repository.dart' show EntriesRepository;
+import '../../entries/domain/entry.dart' show Entry;
+import '../domain/job.dart' show Job, JobID, ToMapExt;
 
 part 'jobs_repository.g.dart';
 
